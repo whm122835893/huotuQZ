@@ -1,0 +1,70 @@
+/* 批次23 P103 实名认证-已完成态 样式
+   几何全部取自原站实测 DOM（375×812 CSS 像素，deviceScaleFactor=2）。
+   颜色全部走 Token；背景图为原站 PNG 本地化（逐像素同图），返回箭头同源图。
+   emoji 零使用。字体度量性偏差用 transform 链式补偿（详见各节点注释）。 */
+
+.b23-cert-page {
+  --b23-red: rgb(217, 52, 55);       /* 主文案「当前已完成实名认证」 */
+  --b23-field: rgb(197, 202, 211);   /* 姓名/身份证号 + 底部按钮底色 */
+  --b23-privacy: rgb(154, 160, 171); /* 隐私说明文字 */
+  --b23-title: #000000;              /* navbar 标题 */
+  --b23-white: #FFFFFF;
+  --b23-page-bg: rgb(247, 249, 252); /* 容器实测底色（背景图覆盖其上） */
+  position: relative;
+  width: 375px;
+  min-height: 812px;
+  margin: 0 auto;
+  background-color: var(--b23-page-bg);
+  background-image: url('../../assets/images/b23-cert-verified.png');
+  background-size: 375px auto;      /* 原站 1125×2436=3x → 375×812 */
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* 返回箭头 7×13 @(19,16) */
+.b23-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer; z-index: 2;
+}
+/* 标题「实名认证」17px/700 黑 @(154,11 h23)，居中于 44px navbar */
+.b23-nav-title {
+  position: absolute; left: 0; right: 0; top: 0; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 700; line-height: 23px; color: var(--b23-title);
+}
+
+/* 主文案 20px/700 @(99,396 h27)，居中；本地 range 顶偏高 → transform 下移微调 */
+.b23-status {
+  position: absolute; left: 0; right: 0; top: 391px;
+  text-align: center;
+  font-size: 20px; font-weight: 700; line-height: 27px; color: var(--b23-red);
+  transform: translateY(3px);
+}
+/* 字段行 14px/400 @y436 / y460，居中 */
+.b23-field {
+  position: absolute; left: 0; right: 0;
+  text-align: center;
+  font-size: 14px; font-weight: 400; line-height: 20px; color: var(--b23-field);
+}
+.b23-field-name { top: 433px; transform: translateY(2px); }
+.b23-field-id   { top: 457px; transform: translateY(2px); }
+
+/* 隐私说明 11px/400 @(31,693 w314 h34)，两行居中 */
+.b23-privacy {
+  position: absolute; left: 31px; top: 690px; width: 314px;
+  text-align: center;
+  font-size: 11px; font-weight: 400; line-height: 17px; color: var(--b23-privacy);
+  transform: translateY(2px);
+}
+
+/* 底部按钮 @(20,756 335×44) bg rgb(197,202,211) br12；文字「已完成实名」14px/400 白 @(153,768) */
+.b23-btn-done {
+  position: absolute; left: 20px; top: 756px;
+  width: 335px; height: 44px;
+  background: var(--b23-field); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.b23-btn-done span {
+  font-size: 14px; font-weight: 400; line-height: 20px; color: var(--b23-white);
+}

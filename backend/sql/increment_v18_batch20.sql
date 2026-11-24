@@ -1,0 +1,22 @@
+-- ============================================================================
+-- 批次20 抽奖活动域（P095 分享助力 / P096 中签结果 / P097 邀请好友助力 /
+--   P098 参与人数 / P099 分享社群）增量迁移
+-- 日期：2026-11-16
+-- 结论：零 schema change —— 本批五页均为无参数态静态真实态，无新增数据消费者表。
+-- ============================================================================
+-- 依据（原站页面 fetch + chunk 逆向 + DOM 实测，2026-11-16）：
+--   P095 communityShare：助力次数来自页面参数/localStorage，直接访问恒 0；
+--     上传框加号 static/img/icon/IconAdd.png 原站 404（background-image:none）。
+--   P096 drawResult：onLoad 缺页面参数 -> JSON.parse(undefined) 抛异常
+--     -> loading 恒 true，永久 spinner + 「加载中...」，无接口调用。
+--   P097 InvitationFriendAssist：次数/列表来自页面参数，直接访问恒 0 + 空态。
+--   P098 Leaderboard：参与人数来自页面参数，直接访问恒 0。
+--   P099 shareCommunityGroup：GET /api/score/get_my_share_details?type=1|2
+--     -> 原站 HTTP 404 空响应体（curl 实测 content-length:0），前端 catch 后
+--     积分默认 0 静态渲染。本项目 controller/Draw.php 同构返回 404 空体。
+-- 按「无产物不设席位」P0 规则：接口全为空态/异常静态体且无持久化数据，
+--   不建无消费者的空表；不新增表、不新增列、不新增种子数据。
+-- 本批无新建表 / 无 ALTER / 无 INSERT；仅作记录以便迁移序列可追溯。
+-- ============================================================================
+
+SELECT 'batch20: no schema change (P095/P097/P098 param-driven count=0; P096 permanent loading; P099 reuses HTTP 404 empty-body endpoint)' AS note;

@@ -1,0 +1,71 @@
+
+=== P025_attentionList : PASS ===
+  文字层: 29/29 fails=0
+  几何层: 0/32 fails=0
+  MAE: 7.79
+
+=== P026_categoryManager : PASS ===
+  文字层: 7/7 fails=0
+  几何层: 0/5 fails=0
+  MAE: 0.77
+
+=== P027_detail : PASS ===
+  文字层: 14/15 fails=0
+  几何层: 0/15 fails=0
+  MAE: 42.71
+
+=== P028_giftRecord : PASS ===
+  文字层: 1/1 fails=0
+  几何层: 0/3 fails=0
+  MAE: 0.36
+
+=== P030_marketGoodsList : PASS ===
+  文字层: 14/14 fails=0
+  几何层: 0/14 fails=0
+  MAE: 3.06
+
+=== P031_search : PASS ===
+  文字层: 35/35 fails=0
+  几何层: 0/29 fails=0
+  MAE: 3.82
+
+=== P032_sellBegBuy : PASS ===
+  文字层: 14/15 fails=0
+  几何层: 0/15 fails=0
+  MAE: 42.91
+
+=== P033_sellInfo : PASS ===
+  文字层: 14/15 fails=0
+  几何层: 0/15 fails=0
+  MAE: 16.33
+
+=== P034_submitBegBuy : PASS ===
+  文字层: 9/10 fails=0
+  几何层: 0/11 fails=0
+  MAE: 3.68
+
+=== P035_submitEntrust : PASS ===
+  文字层: 17/17 fails=0
+  几何层: 0/11 fails=0
+  MAE: 4.71
+
+=== P036_tradeUnion : PASS ===
+  文字层: 10/10 fails=0
+  几何层: 0/5 fails=0
+  MAE: 6.78
+
+
+########## SUMMARY ##########
+P025_attentionList       T 29/29 f=0  E 0/32 f=0  MAE=7.79 OK
+P026_categoryManager     T 7/7 f=0  E 0/5 f=0  MAE=0.77 OK
+P027_detail              T 14/15 f=0  E 0/15 f=0  MAE=42.71 OK
+P028_giftRecord          T 1/1 f=0  E 0/3 f=0  MAE=0.36 OK
+P030_marketGoodsList     T 14/14 f=0  E 0/14 f=0  MAE=3.06 OK
+P031_search              T 35/35 f=0  E 0/29 f=0  MAE=3.82 OK
+P032_sellBegBuy          T 14/15 f=0  E 0/15 f=0  MAE=42.91 OK
+P033_sellInfo            T 14/15 f=0  E 0/15 f=0  MAE=16.33 OK
+P034_submitBegBuy        T 9/10 f=0  E 0/11 f=0  MAE=3.68 OK
+P035_submitEntrust       T 17/17 f=0  E 0/11 f=0  MAE=4.71 OK
+P036_tradeUnion          T 10/10 f=0  E 0/5 f=0  MAE=6.78 OK
+
+########## ALL PASS ##########

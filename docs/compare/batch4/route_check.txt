@@ -1,0 +1,13 @@
+OK   /pages/market/attentionList        title=关注 err=0 | 经典 关注 热榜 全部 推荐 全部 弥勒-达观祥和 发售 44350份 唐卡系列
+OK   /pages/market/categoryManager      title=分类 err=0 | 分类 确认 我的分类 我的关注 推荐 全部 其他分类
+OK   /pages/market/detail               title=火兔 err=0 | 寄售｜《今晚吃鸡》开启寄售 火兔公告｜乘风泡泡探险，问鼎龙门女将 寄售｜《202
+OK   /pages/market/giftRecord           title=赠送记录 err=0 | 赠送记录
+OK   /pages/market/marketGoodsList      title=商品详情 err=0 | -- 限价：¥-- 发行 -- 流通 -- 寄售 求购 委托 成交动态 编号 价
+OK   /pages/market/search               title=搜索 err=0 | 请输入内容 数字藏品 盲盒 弥勒-达观祥和 成交量: 3 ¥36.00 + 0%
+OK   /pages/market/sellBegBuy           title=火兔 err=0 | 寄售｜《今晚吃鸡》开启寄售 火兔公告｜乘风泡泡探险，问鼎龙门女将 寄售｜《202
+OK   /pages/market/sellInfo             title=火兔 err=0 | 寄售｜《今晚吃鸡》开启寄售 火兔公告｜乘风泡泡探险，问鼎龙门女将 寄售｜《202
+OK   /pages/market/submitBegBuy         title=发起求购 err=0 | 发起求购 求购价格 ? ￥请输入价格 高价更快成交 购买数量 − 1 + A 汇
+OK   /pages/market/submitEntrust        title=委托购买 err=0 | 委托购买 最高委托价￥ 委托价格 ? ￥请输入价格 高价挂单更快成交 购买数量 
+OK   /pages/market/tradeUnion           title=GM工会 err=0 | GM工会 您的公会未解锁 赶快购买公会藏品解锁您的公会吧~ 个人权益 我的工会 
+
+直达通过: 11/11

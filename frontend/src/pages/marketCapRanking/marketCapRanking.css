@@ -1,0 +1,12 @@
+/* 批次26 P108 市值排行 —— ranking 空 data 的纯白空页真实态 */
+
+.b26-mcr-page {
+  --b26-mcr-bg: #FFFFFF;
+  position: relative;
+  width: 375px;
+  min-height: 812px;
+  margin: 0 auto;
+  background: var(--b26-mcr-bg);
+  overflow: hidden;
+  font-family: 'Alibaba PuHuiTi', -apple-system, sans-serif;
+}

@@ -1,0 +1,19 @@
+-- =====================================================================
+-- 批次22 活动精选（P102 /pages/activeSelected/activeSelected）—— 零 schema change
+-- 生成日期：2026-11-16
+-- =====================================================================
+-- 侦查结论（原站实测 375×812 + chunk 逆向 + 接口响应）：
+--   POST /api/Activity/category -> {"code":1,"msg":"分类列表","data":[]}
+--   POST /api/activity/index    -> {"code":1,"msg":"请求成功",
+--                                  "data":{"total":0,"per_page":10,...,"data":[]}}
+--   当前账号两个分类下均无活动 -> 开箱空态 +「目前没有任何数据」。
+--   顶部两个分类入口背景图（active-banner-bg1/bg2 OBS 跨域失败、
+--   cj-page-bg/active-new/active-lottey 均 404）如实复刻为隐形卡 + 白字，不臆造图片。
+--
+-- 按 P0「无产物不设席位」原则：不建无消费者的空表。
+-- 本批次无 CREATE TABLE / 无 ALTER TABLE / 无 INSERT / 无 UPDATE。
+-- 后端新增 controller/Activity.php 两个静态响应方法（不读 DB），路由 2 条。
+--
+-- 本文件为占位记录，执行无任何数据库变更（可安全重复执行）。
+-- =====================================================================
+SELECT 'batch22: zero schema change (P102 activeSelected, static empty-state snapshot)' AS note;

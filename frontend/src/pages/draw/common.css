@@ -1,0 +1,108 @@
+/* 批次20 抽奖活动域（P095 分享助力 / P096 中签结果 / P097 邀请好友助力 /
+   P098 参与人数 / P099 分享社群）公共样式。
+   几何全部取自原站实测 DOM（375×812，deviceScaleFactor=2 下 CSS 像素）。
+   navbar 为 uni-app H5 系统导航栏样式（白底 44px、uni-btn-icon 字体返回箭头），
+   空态图标为原站 uview uicon 字体（\ue62f empty-data），全部 Token 化，emoji 零使用。
+   上传框加号与规则卡小图标原站图片资源 404（实测 background-image:none），渲染为空白区，
+   如实复刻为布局占位。 */
+
+@font-face {
+  font-family: 'd20-uicon';
+  /* 原站 uview uicon 字体（at.alicdn.com font_2225171）本地化，覆盖 \ue601 返回箭头与 \ue62f 空态。
+     放 public/static/fonts（原站同构路径风格），避免 src/assets CSS url() 在 dev 下解析歧义 */
+  src: url('/static/fonts/d20-uicon.woff') format('woff');
+}
+
+.d20-page {
+  --d20-bg: #F5F5F5;            /* 整页背景 rgb(245,245,245) */
+  --d20-white: #FFFFFF;         /* navbar / P098 底栏 */
+  --d20-black: #000000;         /* navbar 标题 / P099 规则卡标题 */
+  --d20-card-dark: #302920;     /* 黑卡 rgb(48,41,32) */
+  --d20-btn-dark: #313131;      /* 提交/邀请按钮 rgb(49,49,49) */
+  --d20-btn-jb: #141416;        /* P099 bg_jb_theme rgb(20,20,22) */
+  --d20-theme: #F4F6FA;         /* theme 色 rgb(244,246,250)：计数数字/分享图片按钮字 */
+  --d20-title-gray: #4A4A4A;    /* theme_title rgb(74,74,74)：上传图片标题/P095 规则卡标题 */
+  --d20-gray6: #666666;         /* 黑卡说明文字 rgb(102,102,102) */
+  --d20-gray9: #999999;         /* 上传提示 rgb(153,153,153) */
+  --d20-gray-head: #979997;     /* 表头 rgb(151,153,151) */
+  --d20-upload-bg: #E5E5E5;     /* 上传框 rgb(229,229,229) */
+  --d20-empty: #C0C4CC;         /* 空态图标与文字 rgb(192,196,204) */
+  --d20-loading: #C8C8C8;       /* P096 加载态 rgb(200,200,200) */
+  --d20-loading-ring: rgba(200, 200, 200, 0.3);  /* P096 spinner 底环（加载色 30% 变体） */
+  --d20-radius-card: 20px;      /* 黑卡圆角 */
+  --d20-radius-btn: 12px;       /* 深色按钮圆角 */
+  --d20-radius-upload: 12px;    /* 上传框圆角 */
+  min-height: 100vh;
+  font-family: var(--ht-font);
+  box-sizing: border-box;
+}
+
+/* ===== 系统导航栏：白底 44px；返回 uni-btn-icon \ue601 27px @(5,6)；
+   标题 16px/700 黑色，uni-page-head-bd @70,7 235×30 内垂直居中（文字 y13-30） ===== */
+.d20-navbar {
+  position: relative;
+  height: 44px;
+  background: var(--d20-white);
+}
+.d20-back {
+  position: absolute; left: 5px; top: 6px;
+  width: 27px; height: 27px;
+  font-family: 'd20-uicon';
+  font-size: 27px; font-style: normal; font-weight: 400;
+  line-height: 27px; text-align: center;
+  color: var(--d20-black);
+  cursor: pointer; z-index: 2;
+  user-select: none;
+}
+.d20-title {
+  position: absolute; left: 70px; right: 70px; top: 9px;
+  height: 30px; line-height: 26px;
+  font-size: 16px; font-weight: 700;
+  text-align: center;
+  color: var(--d20-black);
+  overflow: hidden; white-space: nowrap;
+}
+
+/* ===== 黑卡：rgb(48,41,32) br20 padding15 ===== */
+.d20-card-dark {
+  background: var(--d20-card-dark);
+  border-radius: var(--d20-radius-card);
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* ===== 深色主按钮（提交/邀请）：46 高 bg rgb(49,49,49) br12 白字 15px/600 =====
+   line-height 21px + padding-top 5px 校准文字 range 顶（原站 offset 17，字体 metrics 差） */
+.d20-btn-dark {
+  height: 46px;
+  background: var(--d20-btn-dark);
+  border-radius: var(--d20-radius-btn);
+  color: var(--d20-white);
+  font-size: 15px; font-weight: 600; line-height: 21px;
+  padding-top: 5px;
+  display: flex; align-items: center; justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* ===== 空态：uicon \ue62f 90px + 文字 14px，均 #C0C4CC =====
+   图标用真实文本节点渲染（原站 iconfont 即 DOM 文本，保证文字层结构一致） */
+.d20-empty-icon {
+  font-family: 'd20-uicon';
+  font-size: 90px; font-weight: 400;
+  line-height: 90px;
+  color: var(--d20-empty);
+}
+.d20-empty-text {
+  margin-top: 15px;
+  font-size: 14px; font-weight: 400;
+  color: var(--d20-empty);
+}
+
+/* ===== P096 u-loading-page：全屏透明覆盖，wrapper 顶 y=348（整页坐标），
+   spinner 26×26 圆环 3px 边框 #C8C8C8（仅顶段深色）旋转，
+   文字「加载中...」12px #C8C8C8，间距约 5px ===== */
+@keyframes d20-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

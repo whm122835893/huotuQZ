@@ -1,0 +1,40 @@
+/* 批次27 P109 活动规则 —— 几何取自原站实测 DOM（375×812）
+
+   色值 Token 化；规则正文 draw_lots_rule 为空，内容卡为空态。 */
+
+.b27-rules-page {
+  --b27-bg: #FFFFFF;
+  --b27-title: rgb(0, 0, 0);
+  --b27-card: rgb(244, 246, 250);
+  position: relative;
+  width: 375px;
+  min-height: 812px;
+  margin: 0 auto;
+  background: var(--b27-bg);
+  overflow: hidden;
+  font-family: 'Alibaba PuHuiTi', -apple-system, sans-serif;
+}
+
+.b27-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.b27-title {
+  position: absolute; left: 0; right: 0; top: 11px;
+  height: 23px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 23px;
+  color: var(--b27-title);
+}
+
+.b27-content {
+  position: absolute; left: 15px; top: 59px;
+  width: 345px; height: 406px;
+  border-radius: 12px;
+  background: var(--b27-card);
+}

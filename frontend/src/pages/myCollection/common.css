@@ -1,0 +1,52 @@
+/* 批次9 我的资产公共样式 —— 全部取原站 DOM 实测值（2026-11-11 侦查） */
+.mc-page {
+  --mc-bg: #F7F9FC;
+  --mc-card: #FFFFFF;
+  --mc-ink: #212121;
+  --mc-black: #000000;
+  --mc-sub: #9AA0AB;
+  --mc-red: #D93437;
+  --mc-red2: #FF4144;
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--mc-bg);
+  color: var(--mc-ink);
+  box-sizing: border-box;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+.mc-page * { box-sizing: border-box; }
+
+/* 通用 navbar 44px：标题 17px/700 居中，返回箭头 7.3×13 */
+.mc-nav {
+  position: relative;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mc-nav .nav-title { font-size: 17px; font-weight: 700; color: var(--mc-black); line-height: 23px; }
+.mc-nav .nav-back {
+  position: absolute; left: 19px; top: 15.5px;
+  width: 7.3px; height: 13px; cursor: pointer;
+}
+.mc-nav .nav-extra {
+  position: absolute; right: 16px; top: 11px;
+  height: 22px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+}
+
+/* 空态：142×142 箱子 + 13px #999 文案 */
+.mc-empty { display: flex; flex-direction: column; align-items: center; width: 100%; }
+.mc-empty img { display: block; width: 142px; height: 142px; }
+.mc-empty span { margin-top: 11px; font-size: 13px; line-height: 15px; color: #999999; }
+
+/* 白卡 */
+.mc-panel { background: var(--mc-card); border-radius: 12px; }
+
+/* 右箭头 */
+.mc-arrow-r { width: 12px; height: 12px; display: block; }

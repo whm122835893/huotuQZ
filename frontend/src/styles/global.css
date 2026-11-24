@@ -1,0 +1,66 @@
+/* ===== 火兔设计 Token（依据原站取样锁定） ===== */
+:root {
+  --ht-primary: #e6404d;        /* 主红：激活Tab/按钮/价格 */
+  --ht-primary-press: #d33543;
+  --ht-bg: #f5f5f7;             /* 页面背景 */
+  --ht-card: #ffffff;
+  --ht-text-1: #1a1a1a;
+  --ht-text-2: #666666;
+  --ht-text-3: #999999;
+  --ht-input-bg: #eeeef0;       /* 输入条浅灰 */
+  --ht-countdown-bg: #fdebec;   /* 开售倒计时条浅红底 */
+  --ht-radius-card: 16px;
+  --ht-radius-btn: 44px;
+  --ht-font: 'PuHuiTi', -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif;
+  --ht-font-num: 'Bebas Neue', 'PuHuiTi', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  font-family: var(--ht-font);
+  color: var(--ht-text-1);
+  background: #e9e9ee; /* 桌面预览外围底色 */
+}
+
+@font-face {
+  font-family: 'PuHuiTi';
+  src: url('../assets/fonts/Alibaba-PuHuiTi-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PuHuiTi';
+  src: url('../assets/fonts/Alibaba-PuHuiTi-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'PuHuiTi';
+  src: url('../assets/fonts/Alibaba-PuHuiTi-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../assets/fonts/BEBASNEUE-1.OTF') format('opentype');
+  font-display: swap;
+}
+
+img { display: block; }
+button { font-family: inherit; border: none; background: none; cursor: pointer; }
+input { font-family: inherit; border: none; outline: none; background: transparent; }
+input::placeholder { color: #b9b9bd; }
+a { text-decoration: none; color: inherit; }
+
+/* 隐藏滚动条（与原站一致，避免内容区被压缩 15px） */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}

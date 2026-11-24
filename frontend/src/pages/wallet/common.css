@@ -1,0 +1,88 @@
+/* 批次14 钱包页（P082）公共样式 —— 颜色全部走 Token，emoji 零使用 */
+.wl-page {
+  --wl-bg: #F7F9FC;
+  --wl-dark: #212121;
+  --wl-black: #111111;
+  --wl-title-color: #000000;
+  --wl-white: #FFFFFF;
+  --wl-muted: #9AA0AB;
+  --wl-line: #E9ECF1;
+  --wl-panel-key: #8A9099;
+  --wl-mask: rgba(0, 0, 0, 0.45);
+  --wl-toast-bg: rgba(33, 33, 33, 0.92);
+  min-height: 100vh;
+  background: var(--wl-bg);
+  font-family: var(--ht-font);
+}
+
+/* navbar：原站 w-navbar placeholder 占文档流 44px，标题 17px/700 居中 */
+.wl-navbar { height: 44px; position: relative; background: var(--wl-bg); }
+.wl-title {
+  position: absolute; left: 0; right: 0; top: 0; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 700; line-height: 23px; color: var(--wl-title-color);
+  /* 原站 w-navbar 标题文字 Range 顶边 y=11，PuHuiTi 行盒居中后落在 y=10，补 1px */
+  padding-top: 1px;
+}
+.wl-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer; z-index: 2;
+}
+
+/* 卡片区：原站 padding 24rpx 40rpx 180rpx = 12px 20px 90px */
+.wl-body { padding: 12px 20px 90px; }
+.wl-row { display: flex; align-items: center; gap: 8px; }
+/* 卡片 568rpx×288rpx = 284×144（aspectFill）；加号 80rpx×200rpx = 40×100（aspectFit） */
+.wl-card { width: 284px; height: 144px; flex-shrink: 0; object-fit: cover; cursor: pointer; }
+.wl-add  { width: 40px;  height: 100px; flex-shrink: 0; object-fit: contain; cursor: pointer; }
+
+/* 底部固定栏：padding 20rpx 40rpx = 10px 20px；按钮 88rpx = 44px，圆角 24rpx = 12px */
+.wl-footer {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  padding: 10px 20px calc(10px + env(safe-area-inset-bottom));
+  box-sizing: border-box; background: var(--wl-bg);
+}
+.wl-btn {
+  width: 100%; height: 44px; border-radius: 12px; background: var(--wl-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 500; line-height: 16px; color: var(--wl-white);
+  cursor: pointer; user-select: none;
+}
+.wl-btn:active { opacity: 0.85; }
+
+/* 交互结果卡：第三方钱包页不在 113 页清单且依赖外部会话，本地改为展示接口真实响应 */
+.wl-mask {
+  position: fixed; inset: 0; z-index: 40; background: var(--wl-mask);
+  display: flex; align-items: flex-end;
+}
+.wl-panel {
+  width: 100%; box-sizing: border-box; padding: 20px 20px calc(20px + env(safe-area-inset-bottom));
+  background: var(--wl-white); border-radius: 16px 16px 0 0;
+}
+.wl-panel-title {
+  font-size: 17px; font-weight: 700; color: var(--wl-black); margin-bottom: 14px;
+}
+.wl-panel-line {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0; border-bottom: 1px solid var(--wl-line);
+  font-size: 14px; line-height: 20px;
+}
+.wl-panel-k { color: var(--wl-panel-key); }
+.wl-panel-v { color: var(--wl-black); word-break: break-all; text-align: right; max-width: 60%; }
+.wl-panel-link {
+  display: block; margin-top: 16px; height: 44px; border-radius: 12px;
+  background: var(--wl-dark); color: var(--wl-white);
+  font-size: 15px; font-weight: 500; text-align: center; line-height: 44px;
+  text-decoration: none;
+}
+.wl-panel-close {
+  margin-top: 10px; height: 44px; border-radius: 12px; background: var(--wl-line);
+  color: var(--wl-black); font-size: 15px; text-align: center; line-height: 44px;
+  cursor: pointer;
+}
+.wl-toast {
+  position: fixed; left: 50%; bottom: 96px; transform: translateX(-50%);
+  z-index: 60; padding: 10px 18px; border-radius: 8px;
+  background: var(--wl-toast-bg); color: var(--wl-white);
+  font-size: 14px; line-height: 20px; white-space: nowrap;
+}

@@ -1,0 +1,203 @@
+/* 批次15 签到页（P083）公共样式 —— 颜色全部走 Token，emoji 零使用 */
+.sg-page {
+  --sg-red: #D93437;
+  --sg-red-lt: #F06A6C;
+  --sg-title: #E76264;
+  --sg-dark: #212121;
+  --sg-sub: #787F8D;
+  --sg-muted: #9AA0AB;
+  --sg-gray: #C2C5CC;
+  --sg-white: #FFFFFF;
+  --sg-card: rgba(255, 255, 255, 0.48);
+  --sg-cell-soft: rgba(255, 255, 255, 0.6);
+  --sg-mask: rgba(0, 0, 0, 0.5);
+  --sg-shadow: rgba(120, 127, 141, 0.08);
+  --sg-btn-shadow: rgba(217, 52, 55, 0.28);
+  --sg-avatar: #E8EBF0;
+  --sg-toast: rgba(33, 33, 33, 0.92);
+  --sg-grad: linear-gradient(90deg, var(--sg-red) 0%, var(--sg-red-lt) 100%);
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: var(--ht-font);
+  background: var(--sg-white);
+}
+
+/* 原站全屏背景图 1125x2685（3x），aspectFill 铺满 375x812 */
+.sg-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; pointer-events: none; z-index: 0;
+}
+.sg-content { position: relative; z-index: 1; }
+
+/* navbar 占位 44px；返回箭头 7x13 @ (19,16) */
+.sg-navbar { height: 44px; position: relative; }
+.sg-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer;
+}
+
+/* 顶部标题区 */
+.sg-hero { position: relative; height: 68px; }
+.sg-hero-title {
+  position: absolute; left: 20px; top: -3px;
+  font-size: 40px; font-weight: 700; line-height: 55px;
+  color: var(--sg-title); letter-spacing: 1px;
+}
+.sg-hero-sub {
+  position: absolute; left: 20px; top: 45px;
+  font-size: 14px; line-height: 20px; color: var(--sg-sub);
+}
+.sg-rule {
+  position: absolute; right: 20px; top: 8px;
+  min-width: 72px; height: 26px; padding: 0 12px;
+  box-sizing: border-box; border-radius: 8px; background: var(--sg-white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; line-height: 17px; color: var(--sg-sub); cursor: pointer;
+}
+
+/* 用户信息卡 (20,124) 335x114 */
+.sg-user {
+  margin: 12px 20px 0; height: 114px; box-sizing: border-box;
+  padding: 16px 14px; border-radius: 20px;
+  background: var(--sg-card); border: 1px solid var(--sg-white);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sg-user-left { flex: 1; min-width: 0; }
+.sg-user-top { display: flex; align-items: center; }
+/* 原站 fr-image 组件：圆角/底色/overflow 都在父容器，内层 IMG 透明无圆角 */
+.sg-avatar-wrap {
+  width: 44px; height: 44px; flex-shrink: 0;
+  border-radius: 50%; overflow: hidden; background: var(--sg-avatar);
+  /* 原站头像 (35,141)，卡片 align-items:center 落在 138，transform 补 3px */
+  transform: translateY(3px);
+}
+.sg-avatar { width: 44px; height: 44px; object-fit: cover; display: block; }
+.sg-user-meta {
+  margin-left: 10px; display: flex; flex-direction: column; min-width: 0;
+  /* 原站 Range 顶边 144/167，行盒居中落在 142/165；transform 精修，不改布局流 */
+  transform: translateY(2px);
+}
+.sg-nickname {
+  font-size: 15px; font-weight: 500; line-height: 21px; color: var(--sg-dark);
+  max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.sg-uid { margin-top: 2px; font-size: 11px; line-height: 16px; color: var(--sg-muted); }
+.sg-streak { margin-top: 12px; display: flex; align-items: baseline; }
+.sg-streak-txt { font-size: 13px; line-height: 18px; color: var(--sg-sub); }
+.sg-streak-num {
+  margin: 0 4px; font-family: var(--ht-font-num);
+  font-size: 24px; line-height: 29px; color: var(--sg-red);
+}
+.sg-user-right {
+  display: flex; flex-direction: column; align-items: flex-end;
+  flex-shrink: 0; margin-left: 8px;
+}
+.sg-state {
+  font-size: 20px; font-weight: 500; line-height: 27px; color: var(--sg-muted);
+}
+.sg-state--signed { color: var(--sg-red); }
+.sg-state-sub { margin-top: 4px; font-size: 11px; line-height: 16px; color: var(--sg-muted); }
+
+/* 日历卡 (20,250) 335x445 */
+.sg-cal {
+  margin: 12px 20px 0; height: 445px; box-sizing: border-box;
+  padding: 14px 15px; border-radius: 20px;
+  background: var(--sg-card); border: 1px solid var(--sg-white);
+  box-shadow: 0 4px 16px var(--sg-shadow);
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.sg-cal-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6px; height: 22px;
+  /* 原站月份文字 y=270，space-between 落在 265，补 5px（相对定位不影响分布） */
+  position: relative; top: 5px;
+}
+.sg-arrow {
+  width: 20px; height: 20px; object-fit: contain; cursor: pointer; flex-shrink: 0;
+}
+.sg-arrow--disabled { opacity: 0.35; cursor: default; }
+.sg-cal-title { font-size: 16px; font-weight: 500; line-height: 22px; color: var(--sg-dark); }
+.sg-weeks {
+  display: flex; height: 22px; align-items: center;
+  /* 原站星期行 y=349，space-between 落在 343，补 6px */
+  position: relative; top: 6px;
+}
+/* 原站星期列间距 40px（无 gap），日历格才是 42px（40+2）；两者刻意不对齐，如实复刻 */
+.sg-week {
+  width: 40px; flex-shrink: 0; text-align: center;
+  font-size: 16px; line-height: 22px; color: var(--sg-sub);
+}
+/* 原站 gap-pf 首项独有 4px 上偏（「日」y=345，其余 y=349），如实复刻 */
+.sg-week:first-child { transform: translateY(-4px); }
+
+/* 日历格：40x50 @ (36,422)，gap 2px，7 列共 292px */
+.sg-grid {
+  display: flex; flex-wrap: wrap;
+  /* 原站首行数字 y=431，space-between 落在 428，补 3px */
+  position: relative; top: 3px;
+}
+.sg-cell {
+  width: 40px; height: 50px; margin: 0 2px 2px 0;
+  border-radius: 8px; box-sizing: border-box;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.sg-cell:nth-child(7n) { margin-right: 0; }
+.sg-cell--past    { background: var(--sg-gray); }
+.sg-cell--signed  { background: var(--sg-red); }
+.sg-cell--future  { background: var(--sg-cell-soft); }
+.sg-cell--other   { background: var(--sg-cell-soft); }
+.sg-cell--empty   { background: var(--sg-cell-soft); }
+.sg-cell-num { font-size: 14px; font-weight: 500; line-height: 20px; color: var(--sg-white); }
+.sg-cell-status {
+  margin-top: 2px; font-size: 9px; line-height: 12px; color: var(--sg-white);
+  /* 原站数字 y=431 / 状态 y=450（顶差 19）；flex 居中给到 22，transform 收回 3px */
+  transform: translateY(-3px);
+}
+.sg-cell--future .sg-cell-num { color: var(--sg-muted); }
+.sg-cell--other  .sg-cell-num { color: var(--sg-gray); }
+
+/* 底部「立即签到」按钮 (20,719) 335x48 */
+.sg-cta-wrap { margin-top: 24px; padding: 0 20px; }
+.sg-cta {
+  width: 100%; height: 48px; border-radius: 14px;
+  background: var(--sg-grad); box-shadow: 0 6px 14px var(--sg-btn-shadow);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 500; line-height: 22px;
+  color: var(--sg-white); cursor: pointer;
+}
+.sg-cta--signed { background: var(--sg-gray); box-shadow: none; cursor: default; }
+
+/* 签到成功弹窗 */
+.sg-modal {
+  position: fixed; inset: 0; z-index: 1000; background: var(--sg-mask);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.sg-modal-card {
+  width: 286px; box-sizing: border-box; padding: 24px 20px 20px;
+  border-radius: 12px; background: var(--sg-white);
+  display: flex; flex-direction: column; align-items: center;
+}
+.sg-modal-title {
+  font-size: 20px; font-weight: 700; line-height: 28px; color: var(--sg-dark);
+}
+.sg-modal-btn {
+  margin-top: 24px; width: 100%; height: 44px; border-radius: 12px;
+  background: var(--sg-red); display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 500; line-height: 22px;
+  color: var(--sg-white); cursor: pointer;
+}
+.sg-modal-close {
+  margin-top: 16px; width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.sg-modal-close img { width: 24px; height: 24px; object-fit: contain; }
+
+/* toast */
+.sg-toast {
+  position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  z-index: 1200; max-width: 260px; padding: 10px 16px; border-radius: 8px;
+  background: var(--sg-toast); color: var(--sg-white);
+  font-size: 14px; line-height: 20px; text-align: center;
+}

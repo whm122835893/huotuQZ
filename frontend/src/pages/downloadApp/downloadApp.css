@@ -1,0 +1,149 @@
+/* 批次28 P110 下载 APP —— 几何全部取自原站实测 DOM（375×812 CSS 像素，dpr=2）
+   色值 Token 化，emoji 零使用。原站 app-logo.jpg 为 404 破图，忠实复刻为灰块占位。 */
+
+.b28-da-page {
+  --b28-bg: rgb(247, 249, 252);
+  --b28-white: #FFFFFF;
+  --b28-black: #000000;              /* navbar 标题纯黑 */
+  --b28-ink: rgb(33, 33, 33);
+  --b28-muted: rgb(120, 127, 141);
+  --b28-placeholder: rgb(242, 244, 247);
+  --b28-red: rgb(217, 52, 55);
+  position: relative;
+  width: 375px;
+  min-height: 812px;
+  margin: 0 auto;
+  background: var(--b28-bg);
+  overflow: hidden;
+  font-family: 'Alibaba PuHuiTi', -apple-system, sans-serif;
+}
+
+.b28-da-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer; z-index: 3;
+}
+.b28-da-title {
+  position: absolute; left: 0; right: 0; top: 9px;
+  height: 23px; text-align: center;
+  font-size: 17px; font-weight: 700; line-height: 23px;
+  color: var(--b28-black);
+}
+
+/* 顶部白卡 20,52 335x218 br16 */
+.b28-da-card1 {
+  position: absolute; left: 20px; top: 52px;
+  width: 335px; height: 218px;
+  border-radius: 16px; background: var(--b28-white);
+  overflow: hidden;
+}
+.b28-da-logo {
+  position: absolute; left: 16px; top: 20px;
+  width: 48px; height: 48px;
+  border-radius: 12px; background: var(--b28-placeholder);
+}
+.b28-da-brand {
+  position: absolute; left: 74px; top: 17px;
+  font-size: 20px; font-weight: 700; line-height: 27px;
+  color: var(--b28-ink);
+}
+.b28-da-sub {
+  position: absolute; left: 74px; top: 48px;
+  font-size: 13px; font-weight: 400; line-height: 18px;
+  color: var(--b28-muted);
+  white-space: nowrap;
+}
+.b28-da-invite {
+  position: absolute; left: 16px; top: 82px;
+  width: 303px; height: 120px;
+  border-radius: 12px; display: block;
+}
+.b28-da-corner {
+  position: absolute; right: 0; top: 143px;
+  width: 92px; height: 69px; display: block;
+}
+
+/* 下载按钮 */
+.b28-da-btn-android, .b28-da-btn-ios {
+  position: absolute; left: 20px;
+  width: 335px; height: 48px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+}
+.b28-da-btn-android { top: 286px; background: var(--b28-red); }
+.b28-da-btn-ios { top: 344px; background: var(--b28-ink); }
+.b28-da-btn-android span, .b28-da-btn-ios span {
+  font-size: 16px; font-weight: 500; line-height: 22px;
+  color: var(--b28-white);
+  transform: translateY(-2px);
+}
+
+/* 说明白卡 20,408 335x205 br16 */
+.b28-da-card2 {
+  position: absolute; left: 20px; top: 408px;
+  width: 335px; height: 205px;
+  border-radius: 16px; background: var(--b28-white);
+}
+.b28-da-card2-title {
+  position: absolute; left: 12px; top: 12px;
+  font-size: 15px; font-weight: 700; line-height: 21px;
+  color: var(--b28-ink);
+}
+.b28-da-item {
+  position: absolute; left: 12px;
+  width: 311px; height: 40px;
+  display: flex; align-items: flex-start;
+}
+/* card2 第一个子 div 是 title，故 item 实为 nth-of-type 2/3/4 */
+.b28-da-item:nth-of-type(2) { top: 45px; }
+.b28-da-item:nth-of-type(3) { top: 97px; }
+.b28-da-item:nth-of-type(4) { top: 149px; }
+.b28-da-icobox {
+  width: 36px; height: 36px;
+  border-radius: 10px; background: var(--b28-placeholder);
+  display: flex; align-items: center; justify-content: center;
+  flex: 0 0 auto;
+}
+.b28-da-icobox img { width: 20px; height: 20px; display: block; }
+.b28-da-item-txt { margin-left: 10px; }
+.b28-da-item-h {
+  font-size: 14px; font-weight: 500; line-height: 20px;
+  color: var(--b28-ink);
+}
+.b28-da-item-d {
+  font-size: 12px; font-weight: 400; line-height: 17px;
+  color: var(--b28-muted);
+  white-space: nowrap;
+}
+
+/* 邀请码卡 20,629 335x121 br16 */
+.b28-da-card3 {
+  position: absolute; left: 20px; top: 629px;
+  width: 335px; height: 121px;
+  border-radius: 16px; background: var(--b28-white);
+}
+.b28-da-invite-t {
+  position: absolute; left: 0; right: 0; top: 13px;
+  text-align: center;
+  font-size: 12px; font-weight: 400; line-height: 17px;
+  color: var(--b28-muted);
+}
+.b28-da-code {
+  position: absolute; left: 0; right: 0; top: 36px;
+  text-align: center;
+  font-family: 'Bebas Neue', 'Alibaba PuHuiTi', sans-serif;
+  font-size: 28px; font-weight: 400; line-height: 33px;
+  letter-spacing: 2.2px;
+  color: var(--b28-ink);
+}
+.b28-da-copy {
+  position: absolute; left: 117px; top: 78px;
+  width: 101px; height: 28px;
+  border-radius: 14px; background: var(--b28-placeholder);
+  display: flex; align-items: center; justify-content: center;
+  gap: 5px;
+}
+.b28-da-copy img { width: 14px; height: 14px; display: block; }
+.b28-da-copy span {
+  font-size: 12px; font-weight: 400; line-height: 17px;
+  color: var(--b28-muted);
+}

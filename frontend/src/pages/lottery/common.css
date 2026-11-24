@@ -1,0 +1,55 @@
+/* 批次19 抽奖域（P093 中奖记录 / P094 活动规则）公共样式
+   几何全部取自原站实测 DOM（375×812，deviceScaleFactor=2 下 CSS 像素）。
+   颜色全部走 Token；返回箭头为原站 PNG 本地化，emoji 零使用。
+   两页底部均为纯色空白（原站 5 个 tab 图标是 0×0 隐藏预加载层，不渲染 TabBar）。 */
+
+.l19-page {
+  --l19-record-bg: #F7F9FC;   /* P093 整页 + navbar */
+  --l19-white: #FFFFFF;        /* P094 整页 + navbar */
+  --l19-card: #F4F6FA;         /* P094 规则卡 */
+  --l19-title: #000000;
+  --l19-radius: 12px;
+  min-height: 100vh;
+  font-family: var(--ht-font);
+  box-sizing: border-box;
+}
+
+/* navbar：原站 u-navbar 44px；返回箭头 7×13 @(19,16)；标题 17px/700 居中 @ y=11 h=23 */
+.l19-navbar { height: 44px; position: relative; }
+.l19-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer; z-index: 2;
+}
+.l19-title {
+  position: absolute; left: 0; right: 0; top: 0; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 700; line-height: 23px; color: var(--l19-title);
+}
+
+/* ===== P093 中奖记录 =====
+   整页 + navbar 均 rgb(247,249,252)；w-container padding 8rpx 40rpx 80rpx (=4px 20px 40px)；
+   内容区 @20,48 335×240，空盒图 284rpx=142px 在其中 flex 居中 → @117,97 142×142。 */
+.l19--record { background: var(--l19-record-bg); }
+.l19--record .l19-navbar { background: var(--l19-record-bg); }
+.l19-record-body {
+  padding: 4px 20px 40px;      /* navbar 44 之后的页面内容 */
+  box-sizing: border-box;
+}
+.l19-record-empty {
+  height: 240px;
+  display: flex; align-items: center; justify-content: center;
+}
+.l19-empty-img { width: 142px; height: 142px; object-fit: contain; }
+
+/* ===== P094 活动规则 =====
+   整页 + navbar 白；规则卡 .content min-height 80vh=650px @(16,59) 343×650 br12 rgb(244,246,250)；
+   卡内 u-parse 富文本 lotteryRule 为空 → 纯色空白卡，无文字无图片。 */
+.l19--rule { background: var(--l19-white); }
+.l19--rule .l19-navbar { background: var(--l19-white); }
+.l19-rule-card {
+  margin: 15px 16px 0;         /* navbar 44 + 15 = 59；左右 16 → 343 宽 */
+  min-height: 650px;
+  border-radius: var(--l19-radius);
+  background: var(--l19-card);
+  box-sizing: border-box;
+}

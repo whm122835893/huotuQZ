@@ -1,0 +1,235 @@
+/* 批次18 排行三页共享样式 —— 全部色值经 Token 引用，无裸色、无 emoji、无弹跳缓动 */
+
+.rk-page {
+  --rk-bg: #f4f5f5;             /* rankList/userBuy 整页底 rgb(244,245,245) */
+  --rk-master-bg: #f7f9fc;      /* masterRank 底 rgb(247,249,252) */
+  --rk-card: #ffffff;
+  --rk-tab: #838383;            /* 顶部未选中 14px/400 */
+  --rk-active: #191919;         /* 顶部选中 21px/700 */
+  --rk-dot: #e1dac7;            /* 选中标题右上 7px 圆点 */
+  --rk-seg-bg: rgba(242, 236, 219, 0.5);
+  --rk-seg-on-1: #c3b49e;
+  --rk-seg-on-2: #eae4dc;
+  --rk-seg-txt: #847765;
+  --rk-ring: #c3b49e;           /* 领奖台圆环 */
+  --rk-empty-txt: #999999;
+  --rk-line: #ececec;
+  --rk-title-1: #e1dac7;        /* 热榜第1/2名 标题、第1名价格 */
+  --rk-title-3: #6c604e;        /* 热榜第3名 标题/价格 */
+  --rk-title-d: #191919;        /* 热榜第4-6名 标题/价格 */
+  --rk-stats-1: #afafaf;        /* 发行/流通 第1/2名 */
+  --rk-stats-3: #e1dac7;        /* 发行/流通 第3名 */
+  --rk-stats-d: #838383;        /* 发行/流通 第4-6名 */
+  --rk-price-2: #c4b5a0;        /* 第2名价格 */
+  --rk-deal-top: #c3b49e;       /* 成交胶囊 前3 */
+  --rk-deal-d: #f4f5f5;         /* 成交胶囊 后3 */
+  --rk-deal-text: #847765;
+  --rk-rank-no: #afafaf;        /* 4/5/6 排名数字 */
+  --rk-avatar-bg: #f5f5f5;
+  --rk-tabbar-label: #c4c8d0;
+  --rk-tabbar-active: #d93437;
+
+  position: relative;
+  min-height: 100vh;
+  width: 375px;
+  margin: 0 auto;
+  background: var(--rk-bg);
+  font-family: var(--ht-font);
+  overflow: hidden;
+}
+
+/* ===== navbar（仅 masterRank） ===== */
+.rk-navbar {
+  position: relative; height: 44px;
+  background: var(--rk-master-bg);
+}
+.rk-navbar-title {
+  position: absolute; left: 0; right: 0; top: 11px;
+  text-align: center;
+  font-size: 17px; line-height: 23px; font-weight: 700;
+  color: #000000;
+}
+.rk-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer;
+}
+
+/* ===== 空态（masterRank / rankList 共用） ===== */
+.rk-empty-box {
+  position: absolute; left: 0; right: 0;
+  display: flex; flex-direction: column; align-items: center;
+}
+.rk-empty-img { width: 142px; height: 142px; }
+.rk-empty-txt {
+  font-size: 13px; line-height: 15px; font-weight: 400;
+  color: var(--rk-empty-txt);
+}
+
+/* ===== 顶部 4 Tab（rankList / userBuy 共用） ===== */
+.rk-tabs {
+  position: absolute; left: 0; top: 7px;
+  width: 375px; height: 36px;
+  display: flex; align-items: center;
+  padding-left: 17px;
+  box-sizing: border-box;
+}
+.rk-tab {
+  font-size: 14px; line-height: 20px; font-weight: 400;
+  color: var(--rk-tab);
+  white-space: nowrap; cursor: pointer; user-select: none;
+}
+.rk-tab--r1 { margin-left: 32px; }   /* 关注 @77 = 经典@17 + 28 + 32 */
+.rk-tab--r2 { margin-left: 31px; }   /* 热榜 @136 */
+.rk-tab--active {
+  position: relative;
+  font-size: 21px; line-height: 29px; font-weight: 700;
+  color: var(--rk-active);
+}
+.rk-tab--active .rk-tab-dot {
+  position: absolute; right: -7px; top: 0;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--rk-dot);
+}
+
+/* ===== 名人堂 Segment（购入榜 / 售出榜） ===== */
+.rk-seg {
+  position: absolute; left: 74px; top: 53px;
+  width: 228px; height: 43px; border-radius: 8px;
+  background: var(--rk-seg-bg);
+  display: flex; align-items: center;
+  box-sizing: border-box; padding: 5px;
+}
+.rk-seg-btn {
+  width: 106px; height: 33px; border-radius: 5px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; line-height: 20px; font-weight: 500;
+  color: var(--rk-seg-txt);
+  cursor: pointer; user-select: none;
+}
+.rk-seg-btn + .rk-seg-btn { margin-left: 6px; }
+.rk-seg-btn--on {
+  background: linear-gradient(0deg, var(--rk-seg-on-1) 0%, var(--rk-seg-on-2) 100%);
+}
+
+/* ===== 名人堂 领奖台 ===== */
+.rk-podium { position: absolute; left: 0; top: 122px; width: 375px; height: 245px; }
+.rk-pod {
+  position: absolute;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--rk-ring);
+  display: flex; align-items: center; justify-content: center;
+}
+.rk-pod-1 { left: 40px;  top: 22px; }   /* @40,144 */
+.rk-pod-2 { left: 160px; top: 0; }      /* @160,122 */
+.rk-pod-3 { left: 279px; top: 39px; }   /* @279,161 */
+.rk-pod-img {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--rk-avatar-bg); object-fit: cover;
+}
+.rk-pod-col {
+  position: absolute; top: 170px;
+  width: 60px; display: flex; flex-direction: column; align-items: center;
+}
+.rk-pod-col--1 { left: 36px; }
+.rk-pod-col--2 { left: 155px; }
+.rk-pod-col--3 { left: 275px; }
+.rk-pod-dash {
+  font-size: 14px; line-height: 20px; font-weight: 500;
+}
+.rk-pod-wealth {
+  margin-top: 5px;
+  font-size: 10px; line-height: 14px; font-weight: 400;
+  color: var(--rk-tab);           /* 原站 rgb(131,131,131)，非 #999 */
+}
+.rk-pod-line {
+  position: absolute; left: 17px; top: 368px;
+  width: 341px; height: 1px; background: var(--rk-line);
+}
+
+/* ===== 热榜卡片列表 ===== */
+.rk-hot-list { position: absolute; left: 0; top: 67px; width: 375px; }
+.rk-card {
+  position: relative;
+  margin-left: 17px; width: 340px; height: 75px;
+  border-radius: 14px;
+  box-sizing: border-box;
+  padding: 8px 13px 8px 8px;
+  display: flex; align-items: center;
+  margin-bottom: 10px;
+}
+.rk-card--top { background: transparent; }   /* rank-bg-0*.png 原站 404，透明底 */
+.rk-card--plain { background: var(--rk-card); }
+.rk-card-rank {
+  width: 40px; flex: 0 0 40px;
+  display: flex; align-items: center; justify-content: flex-start;
+  padding-left: 9px; box-sizing: border-box;
+  font-size: 17px; line-height: 23px; font-weight: 700;
+  color: var(--rk-rank-no);
+}
+.rk-card-img {
+  width: 59px; height: 59px; border-radius: 7px;
+  object-fit: cover; flex: 0 0 59px;
+  background: var(--rk-avatar-bg);
+}
+.rk-card-main {
+  margin-left: 10px; flex: 1 1 auto; min-width: 0;
+  display: flex; flex-direction: column;
+}
+.rk-card-name {
+  font-weight: 500; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.rk-card-stats {
+  margin-top: 4px;
+  font-size: 8px; line-height: 11px; font-weight: 400;
+  white-space: nowrap;
+}
+.rk-card-deal {
+  margin-top: 4px; align-self: flex-start;
+  padding: 0 6px; height: 17px; border-radius: 4px;
+  display: flex; align-items: center;
+  font-size: 8px; line-height: 11px; font-weight: 400;
+}
+/* 原站胶囊内 icon-deal.png 为 404 破图，uni-image 元素仍占位 ~10px 把文字推到 x=152；
+   按「破图占位保留、不渲染」复刻该布局，不臆造替代图标。 */
+.rk-deal-ic { width: 10px; height: 10px; flex: 0 0 10px; margin-left: 3px; }
+.rk-card-price {
+  margin-left: auto; flex: 0 0 auto;
+  display: flex; align-items: baseline;
+  font-weight: 800; white-space: nowrap;
+  transform: translateY(16px);
+}
+.rk-price-sym { font-size: 13px; line-height: 18px; }
+.rk-price-num { font-size: 19px; line-height: 26px; }
+.rk-price-suffix { font-size: 10px; line-height: 14px; }
+
+/* ===== 底部 TabBar（rankList / userBuy，首页激活） ===== */
+.rk-tabbar {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  width: 375px; height: 56px; margin: 0 auto;
+  background: var(--rk-card);
+  display: flex; z-index: 100;
+}
+.rk-tb-item {
+  flex: 1; height: 55px;
+  display: flex; flex-direction: column; align-items: center;
+  padding-top: 8px; cursor: pointer;
+}
+.rk-tb-icon { width: 24px; height: 24px; display: block; }
+.rk-tb-icon--center { width: 37px; height: 37px; margin-top: -5px; }
+.rk-tb-label {
+  margin-top: 3px;
+  font-size: 10px; line-height: 14px;
+  color: var(--rk-tabbar-label);
+}
+.rk-tb-label--active { color: var(--rk-tabbar-active); }
+
+/* ===== 系统 toast（名人堂加载失败，瞬时，仅用于交互还原，不参与稳定态对比） ===== */
+.rk-toast {
+  position: fixed; left: 122px; top: 387px; z-index: 200;
+  min-width: 131px; height: 39px; padding: 0 10px; border-radius: 5px;
+  background: rgba(17, 17, 17, 0.7);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; line-height: 15px; color: #ffffff;
+  box-sizing: border-box;
+}

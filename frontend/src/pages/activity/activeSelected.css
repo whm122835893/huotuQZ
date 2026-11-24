@@ -1,0 +1,56 @@
+/* 批次22 活动精选（P102）样式
+   几何全部取自原站实测 DOM（375×812 CSS 像素，deviceScaleFactor=2）。
+   颜色全部走 Token；返回箭头与空态图为原站 PNG 本地化（与批次19 逐像素同图，复用 b19 资源），
+   emoji 零使用。无 TabBar（原站 5 个 tab 图标是 0×0 隐藏预加载层，不渲染）。 */
+
+.d22--selected {
+  --d22-bg: #F4F6FA;          /* 整页 + navbar 实测 rgb(244,246,250) */
+  --d22-title: #000000;       /* navbar 标题 17px/700 黑 */
+  --d22-banner-text: #FFFFFF; /* 分类入口白字（背景图 404 后浮于页面底） */
+  --d22-empty-text: #999999;  /* 空态提示文字 */
+  min-height: 100vh;
+  background: var(--d22-bg);
+}
+
+/* navbar：u-navbar 44px；返回箭头 7×13 @(19,16)；标题 17px/700 居中 @y11 h23 */
+.d22-navbar { height: 44px; position: relative; }
+.d22-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer; z-index: 2;
+}
+.d22-title {
+  position: absolute; left: 0; right: 0; top: 0; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 700; line-height: 23px; color: var(--d22-title);
+}
+
+/* 两个分类入口 .item：@(16,60) 与 @(195,60) 各 164×64，间距 15px。
+   背景图原站 404（OBS 跨域失败 + cj-page-bg/active-new/active-lottey 均 404），
+   实测背景 = 页面浅灰蓝 Token 色（隐形卡），仅白字浮于底上。 */
+.d22-banners { display: flex; gap: 15px; margin: 16px 16px 0; }
+.d22-banner {
+  width: 164px; height: 64px;
+  display: flex; align-items: center; justify-content: center;
+  box-sizing: border-box;
+}
+.d22-banner-text {
+  font-size: 15px; font-weight: 400; line-height: 21px;
+  color: var(--d22-banner-text);
+  /* 文字原站 @(90,86)/(269,86)：卡片内居中约 @68 → 右移 22px；
+     本地 PuHuiTi 字体 range 顶比原站系统栈高 5px → 下移 5px 对齐 y=86 */
+  transform: translate(22px, 5px);
+}
+
+/* 空盒图 142×142 @(116.5,236)；提示「目前没有任何数据」13px 灰 @(135,389) */
+.d22-empty-img {
+  display: block;
+  width: 142px; height: 142px;
+  margin: 112px auto 0;   /* banner 顶 y60 +64 +112 = 236 */
+  object-fit: contain;
+}
+.d22-empty-text {
+  margin: 11px 0 0;
+  text-align: center;
+  font-size: 13px; font-weight: 400; line-height: 15px;
+  color: var(--d22-empty-text);
+}

@@ -1,0 +1,16 @@
+-- 批次4 市场交易（11 页：P025/P026/P027/P028/P030-P036）增量脚本
+-- 本批全部为无参数直访的真实态快照复刻，零 schema change、零种子数据。
+--
+-- 端点复用情况（均已由早期批次实现，本批零新增端点）：
+--   P025 attentionList / P031 search —— 复用 POST /api/market/market/getMarketList（Market 表真实商品数据）
+--   P027 detail / P032 sellBegBuy / P033 sellInfo —— 无参数直访 fallback 到首页，
+--       复用首页全套端点（getBanner / afficheList / getSeries / blind_box/list / marketrebang / newrank1）
+--   P026 categoryManager —— 静态真实态（customSeriesList 返回空数组），前端快照
+--   P028 giftRecord —— tradingInformation 返回 list:[] 空态，前端快照
+--   P030 marketGoodsList —— marketGoodsDetail 返回 HTTP 500 An error occurred，前端空壳快照
+--   P034 submitBegBuy —— collectionDetail 返回 code0「藏品ID不能为空」，前端表单+toast 快照
+--   P035 submitEntrust —— collectionDetail / Prepayment/collectionDetail 返回 code0，前端表单快照
+--   P036 tradeUnion —— 无专用接口（仅全局 getConfig/getUserInfo），静态真实态快照
+--
+-- 无产物不设席位：本批不建任何空表、不新增任何列、不写任何种子数据。
+SELECT 'batch4: 11 pages snapshot, zero schema change' AS status;

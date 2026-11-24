@@ -1,0 +1,9 @@
+P107 /pages/leaderboard/leaderboard -> title="排行榜" exp="排行榜" err=0 textLen=8 OK
+P108 /pages/marketCapRanking/marketCapRanking -> title="市值排行" exp="市值排行" err=0 textLen=0 OK
+P109 /pages/rules/rules -> title="活动规则" exp="活动规则" err=0 textLen=4 OK
+P110 /pages/index/downloadApp -> title="下载 APP" exp="下载 APP" err=0 textLen=144 OK
+P111 /pages/index/start -> title="启动页" exp="启动页" err=0 textLen=2 OK
+P112 /pages/webview/webview -> title="火兔" exp="" err=0 textLen=0 OK
+P113 /pages/webview/webview-storage -> title="火兔" exp="" err=0 textLen=0 OK
+
+ROUTE_CHECK: 7/7 OK

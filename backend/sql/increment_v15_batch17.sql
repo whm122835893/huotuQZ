@@ -1,0 +1,27 @@
+-- 批次17 返佣域（P086-P088）+ 批次3 占位落地页（P023 设置 / P092 抽奖活动）增量迁移
+-- ============================================================================
+-- 【本批零数据表变更】—— 按反剧场铁律「无产物不设席位」，不建无消费者的表。
+--
+-- 侦查实测（2026-11-15，页面内 fetch，header token + version:1.0.1）：
+--   POST /api/user/commison_rank   {types:1|2}  -> HTTP 404 {"code":404,"msg":"An error occurred","data":null}
+--   POST /api/user/commision_info  {}           -> HTTP 404 同构
+--   POST /api/user/bei_yao_list    {page:1}    -> HTTP 404 同构
+--   POST /api/lottery/info         {id:"2"}    -> code:0「暂无抽奖活动」data:null
+--   POST /api/lottery/statistics   {lottery_id:"2"} -> code:1「successfully !!!」data:[]
+--   POST /api/lottery/record       {lottery_id:"2",type:10,page:1,list_rows:15}
+--        -> code:1「successfully !!!」data{total:0,per_page:15,current_page:1,last_page:0,data:[]}
+--
+-- 说明：
+--   1. 返佣三接口原站全部异常（404），页面真实态为「排行榜空态 / 返佣主页白屏 /
+--      被邀请人清单空态」，无真实业务数据需要落库；控制器如实复刻异常响应，不臆造
+--      榜单/返佣数值，故无表、无列、无种子数据。
+--   2. 抽奖三接口均为「当前无活动」空态（total:0 / data:[] / data:null），同样无落库数据。
+--   3. 设置页（P023）复用批次1 既有 /api/user/getUserInfo，ht_user 现有列
+--      （nickname / origin_uid / inviter_code / real_name_authentication）已足够，
+--      BaseController::auth() 取整行、User::getUserInfo() 原样返回，零代码改动、零新增列。
+--   4. 邀请海报浮层复用 ht_user.inviter_code / origin_uid 与本地静态二维码 PNG，
+--      不读表、不建表（避免无消费者产物）。
+--
+-- 零改动说明：未新增任何表/列，未改动任何已完成控制器（用户硬规则第 6 条）。
+-- ============================================================================
+SELECT 'batch17: no schema change (all endpoints are static error/empty snapshots)' AS note;

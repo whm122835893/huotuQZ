@@ -1,0 +1,70 @@
+/* 批次13 转赠公共样式（P080-P081 共享）——颜色全部走 Token */
+.rg-page {
+  --rg-bg: #F7F9FC;
+  --rg-card: #FFFFFF;
+  --rg-dark: #212121;
+  --rg-black: #111111;
+  --rg-muted: #9AA0AB;
+  --rg-placeholder: #C0C4CC;
+  --rg-field: #EEEEEE;
+  --rr-bg: #F4F6FA;
+  --rg-red: #D93437;
+  --rg-gray: #999999;
+  --rg-white: #FFFFFF;
+  min-height: 100vh;
+  background: var(--rg-bg);
+  /* 字体继承全局 var(--ht-font) = PuHuiTi */
+}
+
+/* navbar：原站 w-navbar placeholder:true，占文档流 44px */
+.rg-navbar { height: 44px; position: relative; background: var(--rg-bg); }
+.rg-nav-title {
+  position: absolute; left: 0; right: 0; top: 0; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 700; line-height: 23px; color: var(--rg-black);
+}
+.rg-nav-back {
+  position: absolute; left: 19px; top: 15px;
+  width: 8px; height: 14px; cursor: pointer; z-index: 2;
+}
+
+/* 转赠记录页背景与 navbar（原站实测 #F4F6FA，navbar 透明继承） */
+.rr-page { background: var(--rr-bg); min-height: 100vh; }
+.rr-navbar { height: 44px; position: relative; background: transparent; }
+
+/* 双 Tab：两个等宽，选中黑色 + 20x4 短横线 */
+.rr-tabs { display: flex; height: 46px; position: relative; }
+.rr-tab {
+  flex: 1; position: relative; padding-top: 5px; box-sizing: border-box;
+  text-align: center; font-size: 14px; font-weight: 500; line-height: 20px;
+  color: var(--rg-gray); cursor: pointer;
+}
+.rr-tab.on { color: var(--rg-black); }
+.rr-tab.on::after {
+  content: ''; position: absolute; left: 50%; bottom: 8px;
+  transform: translateX(-50%); width: 20px; height: 4px;
+  border-radius: 2px; background: var(--rg-black);
+}
+
+/* 空态：插画 142x142 + 提示文字，y 基准 109 / 262（从 tabs 底部 90 起算） */
+.rr-empty { padding-top: 21px; }
+.rr-empty img { display: block; width: 142px; height: 142px; margin: 0 auto; }
+.rr-empty p {
+  margin: 11px 0 0; text-align: center;
+  font-size: 13px; font-weight: 400; line-height: 15px; color: var(--rg-gray);
+}
+
+/* 转赠记录列表项（数据驱动，原站当前 total=0 不渲染） */
+.rr-item {
+  margin: 0 16px 12px; padding: 12px; border-radius: 12px; background: var(--rg-card);
+}
+.rr-item-top { display: flex; }
+.rr-item-img { width: 83px; height: 83px; border-radius: 12px; flex-shrink: 0; }
+.rr-item-name {
+  flex: 1; min-width: 0; display: flex; align-items: center;
+  font-size: 16px; font-weight: 500; color: var(--rg-black); padding-left: 12px;
+}
+.rr-item-line {
+  display: flex; justify-content: space-between; margin-top: 16px; font-size: 14px;
+}
+.rr-item-key { color: var(--rg-gray); }

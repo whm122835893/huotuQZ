@@ -1,0 +1,19 @@
+-- =====================================================================
+-- 批次24 行情K线（P105 /pages/kline/buy + P106 /pages/kline/info）
+--                                                —— 零 schema change
+-- 生成日期：2026-11-16
+-- =====================================================================
+-- 侦查结论（原站实测 375×812 + chunk 逆向 + 接口响应）：
+--   两页为深色主题真实数据快照——内容区纯黑(P105)/深蓝 rgb(35,39,68)(P106)，
+--   banner 为 u-swiper 轮播两张原站 JPG（98f80a.../ddc6e2...，750×580 cover），
+--   行情数据「112.34CNY / -0.53% / 30000」等为当前账号固定快照值。
+--   接口：全局 POST getConfig + getUserInfo + banner/show/getBanner（本地已存在
+--   Index::banner 返回与原站逐字一致），无页面专用接口、无 K线数据接口。
+--
+-- 按 P0「无产物不设席位」原则：不建无消费者的空表。
+-- 本批次无 CREATE TABLE / 无 ALTER TABLE / 无 INSERT / 无 UPDATE。
+-- 后端零改动（复用已存在的 getConfig/getUserInfo/getBanner），无新增端点。
+--
+-- 本文件为占位记录，执行无任何数据库变更（可安全重复执行）。
+-- =====================================================================
+SELECT 'batch24: zero schema change (P105 kline/buy + P106 kline/info, dark-theme static snapshot)' AS note;

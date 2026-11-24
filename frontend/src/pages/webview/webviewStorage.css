@@ -1,0 +1,12 @@
+/* 批次29 P113 webview-storage —— 无 url 参数的空白存储 webview 真实态 */
+
+.b29-wvs-page {
+  --b29-wvs-bg: #FFFFFF;
+  position: relative;
+  width: 375px;
+  min-height: 812px;
+  margin: 0 auto;
+  background: var(--b29-wvs-bg);
+  overflow: hidden;
+  font-family: 'Alibaba PuHuiTi', -apple-system, sans-serif;
+}

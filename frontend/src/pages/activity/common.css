@@ -1,0 +1,55 @@
+/* 批次21 活动域（P100 抽签 / P101 中签记录）公共样式
+   几何全部取自原站实测 DOM（375×812 CSS 像素，deviceScaleFactor=2）。
+   颜色全部走 Token；返回箭头与空态图为原站 PNG 本地化（与批次19 逐像素同图，复用 b19 资源），
+   emoji 零使用。两页底部均无 TabBar（原站 5 个 tab 图标是 0×0 隐藏预加载层，不渲染）。 */
+
+.activity-page {
+  --d21-white: #FFFFFF;        /* 两页整页 + navbar 纯白（实测 rgb(255,255,255)） */
+  --d21-title: #000000;        /* navbar 标题 17px/700 黑 */
+  --d21-empty-text: #999999;   /* P101 空态提示文字 */
+  min-height: 100vh;
+  font-family: var(--ht-font);
+  box-sizing: border-box;
+  background: var(--d21-white);
+}
+
+/* navbar：原站 u-navbar 44px；返回箭头 7×13 @(19,16)；标题 17px/700 居中 @ y=11 h=23 */
+.d21-navbar { height: 44px; position: relative; }
+.d21-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer; z-index: 2;
+}
+.d21-title {
+  position: absolute; left: 0; right: 0; top: 0; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 700; line-height: 23px; color: var(--d21-title);
+}
+
+/* ===== P100 抽签 =====
+   原站 GET /api/draw/get 返回 {"code":0,"msg":"活动不存在","data":null}，
+   组件渲染时抛异常（pageerror "Object"）→ <uni-page-body> 空 → 整页纯白。
+   这是无活动参数直访的真实态，如实复刻为白屏，不臆造抽奖界面。 */
+.d21--draw { background: var(--d21-white); }
+
+/* ===== P101 中签记录 =====
+   原站 POST /api/draw/drawLog 返回 data:[] → 空态。
+   navbar 44 之后有透明空条带 .br-12.pa-16 @(16,44) 343×32（draw_notice 为空的残留），
+   空盒图 284rpx=142px @(116.5,276) 142×142，提示文字「目前没有任何数据」13px 灰色 @(135,429)。 */
+.d21--record { background: var(--d21-white); }
+.d21-record-strip {
+  margin: 0 16px;
+  height: 32px;
+  box-sizing: border-box;
+}
+.d21-record-empty-img {
+  display: block;
+  width: 142px; height: 142px;
+  margin: 200px auto 0;      /* 44 navbar + 32 strip + 200 = 276 顶部，142 高 */
+  object-fit: contain;
+}
+.d21-record-empty-text {
+  margin: 11px 0 0;
+  text-align: center;
+  font-size: 13px; font-weight: 400; line-height: 15px;
+  color: var(--d21-empty-text);
+}

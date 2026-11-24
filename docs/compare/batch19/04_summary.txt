@@ -1,0 +1,40 @@
+批次19 抽奖两页  像素级对比汇总
+
+[P093 中奖记录（空盒图空态）]  文字 1/1  几何 3/3  背景 4/4  MAE 0.02/255 (navbar 2.89)  显著 0.00%
+[P094 活动规则（空白规则卡）]  文字 1/1  几何 1/1  背景 5/5  MAE 0.00/255 (navbar 3.22)  显著 0.00%
+
+超差明细（文字层）:
+  （无超差项，2 态全部 ±4px 内一致）
+
+几何超差明细:
+  （无超差项，关键元素 ±2px 内一致，背景/圆角一致）
+
+背景色采样明细:
+  OK  record/navbar左  期望(247, 249, 252) orig(247, 249, 252) clone(247, 249, 252)
+  OK  record/页顶左      期望(247, 249, 252) orig(247, 249, 252) clone(247, 249, 252)
+  OK  record/页中左      期望(247, 249, 252) orig(247, 249, 252) clone(247, 249, 252)
+  OK  record/页底左      期望(247, 249, 252) orig(247, 249, 252) clone(247, 249, 252)
+  OK  rule/navbar左  期望(255, 255, 255) orig(255, 255, 255) clone(255, 255, 255)
+  OK  rule/页顶左      期望(255, 255, 255) orig(255, 255, 255) clone(255, 255, 255)
+  OK  rule/卡片内      期望(244, 246, 250) orig(244, 246, 250) clone(244, 246, 250)
+  OK  rule/卡片外右     期望(255, 255, 255) orig(255, 255, 255) clone(255, 255, 255)
+  OK  rule/页底左      期望(255, 255, 255) orig(255, 255, 255) clone(255, 255, 255)
+
+边界说明:
+  1. Cancel（uni-actionsheet @y=822）为原站系统隐藏项，按批次13/15/17/18 惯例 SKIP。
+  2. 原站 cj-page-bg.png 为 HTTP 404 历史破图（page-bg-colorfull 背景层），
+     两页实际渲染为纯色：record 整页+navbar rgb(247,249,252)，
+     rule 整页+navbar rgb(255,255,255)。Clone 如实复刻纯色，不臆造背景图。
+  3. P093 record 空盒图 empty-data.png 284rpx=142px @(117,97)；
+     w-container padding 8rpx 40rpx 80rpx(=4px 20px 40px)，内容区 335x240 flex 居中。
+     P093 实际调 lotteryStatistics（非 /lottery/record）→ data:[] 空态，
+     本项目复用批次17 已实现的 POST /api/lottery/statistics，返回体完全一致。
+  4. P094 rule 正文来自 uni.getStorageSync("lotteryRule")，本账号实测恒为 null；
+     getConfig 中 draw_lots_rule / draw_lots_notice / helpdraw_rule / share_rule
+     等全部规则 key 均为空字符串，P092 抽奖页不写入该 storage。故 .content
+     @(16,59) 343x650 min-height 80vh br12 rgb(244,246,250) 空白卡是真实态。
+     本项目如实复刻空白卡，不臆造规则正文；无页面专用接口、零新增端点。
+  5. 两页底部均为纯色空白：原站 5 个 tab 图标是 0x0 隐藏预加载层，不渲染 TabBar。
+  6. P092 抽奖页右上「我的中奖」原站跳 #/pages/lottery/record?id=2；
+     本批将该 toast 占位联动到 P093（视觉零改动，延续批次3/17 占位清理）。
+  7. 8px/12px 字号 computed 存浮点误差，对比脚本归一化为整数 px 后比对。

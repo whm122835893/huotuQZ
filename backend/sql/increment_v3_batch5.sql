@@ -1,0 +1,55 @@
+-- 批次5（发现·公告 5页）增量迁移
+-- P037 newsDetails / P039 noticeDetails / P040 search / P041 sendRumor / P042 wallDetails
+-- 执行：mariadb -u ht_user -pht_pass_2026 ht_huotu < sql/increment_v3_batch5.sql
+
+-- 公告表扩展（详情页字段，与原站 afficheDetail 返回结构对齐）
+ALTER TABLE ht_affiche
+  ADD COLUMN `describe` VARCHAR(500) NOT NULL DEFAULT '' COMMENT '摘要',
+  ADD COLUMN content MEDIUMTEXT NULL COMMENT '富文本内容',
+  ADD COLUMN image VARCHAR(255) NOT NULL DEFAULT '' COMMENT '头图',
+  ADD COLUMN publish_time BIGINT NOT NULL DEFAULT 0 COMMENT '发布时间',
+  ADD COLUMN updatetime BIGINT NOT NULL DEFAULT 0,
+  ADD COLUMN affiche_type_id INT NOT NULL DEFAULT 0 COMMENT '分类id',
+  ADD COLUMN collection_ids VARCHAR(255) NOT NULL DEFAULT '',
+  ADD COLUMN `read` INT NOT NULL DEFAULT 0,
+  ADD COLUMN sort INT NOT NULL DEFAULT 0,
+  ADD COLUMN status TINYINT NOT NULL DEFAULT 1,
+  ADD COLUMN top TINYINT NOT NULL DEFAULT 0,
+  ADD COLUMN is_wxpusher TINYINT NOT NULL DEFAULT 2,
+  ADD COLUMN image_type INT DEFAULT NULL;
+
+-- 资讯（新闻发声，原站当前空表，保持同构）
+CREATE TABLE IF NOT EXISTS ht_ant_news (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  category VARCHAR(50) NOT NULL DEFAULT '' COMMENT '分类',
+  title VARCHAR(255) NOT NULL DEFAULT '',
+  image VARCHAR(255) NOT NULL DEFAULT '',
+  content MEDIUMTEXT NULL,
+  publish_time BIGINT NOT NULL DEFAULT 0,
+  createtime BIGINT NOT NULL DEFAULT 0,
+  status TINYINT NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='资讯(新闻发声)';
+
+-- 辟谣墙（原站当前空表，保持同构）
+CREATE TABLE IF NOT EXISTS ht_rumor_wall (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL DEFAULT 0,
+  content TEXT NULL,
+  images TEXT NULL COMMENT '逗号分隔',
+  is_anonymous TINYINT NOT NULL DEFAULT 0,
+  create_time VARCHAR(30) NOT NULL DEFAULT '',
+  createtime BIGINT NOT NULL DEFAULT 0,
+  status TINYINT NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='辟谣墙';
+
+CREATE TABLE IF NOT EXISTS ht_rumor_comment (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  rumor_id INT NOT NULL DEFAULT 0,
+  user_id INT NOT NULL DEFAULT 0,
+  content VARCHAR(500) NOT NULL DEFAULT '',
+  parent_id INT NOT NULL DEFAULT 0,
+  reply_user_id INT NOT NULL DEFAULT 0,
+  create_time VARCHAR(30) NOT NULL DEFAULT '',
+  createtime BIGINT NOT NULL DEFAULT 0,
+  status TINYINT NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='辟谣墙评论';

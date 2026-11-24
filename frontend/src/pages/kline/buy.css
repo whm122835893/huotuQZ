@@ -1,0 +1,82 @@
+/* 批次24 P105 行情-购买页 样式
+   几何全部取自原站实测 DOM（375×812 CSS 像素，deviceScaleFactor=2）。
+   颜色全部走 Token；banner 为原站 PNG/JPG 本地化（逐像素同图），返回箭头同源图。
+   emoji 零使用。深色主题：内容区纯黑 + navbar 深蓝。 */
+
+.b24-buy-page {
+  --b24-bg: rgb(0, 0, 0);            /* 内容区纯黑 */
+  --b24-nav: rgb(35, 39, 68);        /* navbar 深蓝 */
+  --b24-white: #FFFFFF;
+  --b24-muted: rgb(122, 122, 122);
+  --b24-dark: rgb(51, 51, 51);       /* 涨跌幅/价格暗灰（低对比真实态） */
+  --b24-dot: rgb(125, 116, 55);      /* 指示器暗黄点 */
+  --b24-bar: rgb(117, 251, 177);     /* 指示器亮绿条 */
+  position: relative;
+  width: 375px;
+  min-height: 812px;
+  margin: 0 auto;
+  background: var(--b24-bg);
+  overflow: hidden;
+}
+
+/* navbar 44px 深蓝 */
+.b24-buy-page::before {
+  content: ''; position: absolute; left: 0; top: 0; width: 375px; height: 44px;
+  background: var(--b24-nav); z-index: 0;
+}
+.b24-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer; z-index: 3;
+}
+.b24-nav-title {
+  position: absolute; left: 0; right: 0; top: 0; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 700; line-height: 23px; color: var(--b24-white); z-index: 2;
+}
+.b24-nav-right {
+  position: absolute; right: 6px; top: 13px;
+  font-size: 12px; font-weight: 400; line-height: 17px; color: var(--b24-white); z-index: 2;
+}
+
+/* banner 轮播：首图 @(16,44 375×163) cover；次图屏外 @(391,44) */
+.b24-banner { position: absolute; left: 16px; top: 44px; width: 750px; height: 163px; overflow: hidden; z-index: 1; }
+.b24-banner-img, .b24-banner-img2 {
+  display: block; width: 375px; height: 163px; object-fit: cover; object-position: center;
+  float: left;
+}
+.b24-indicator-dot {
+  position: absolute; left: 195px; top: 163px; width: 4px; height: 4px;
+  background: var(--b24-dot); border-radius: 2px; z-index: 3;
+}
+.b24-indicator-bar {
+  position: absolute; left: 203px; top: 163px; width: 9px; height: 4px;
+  background: var(--b24-bar); border-radius: 1px; z-index: 3;
+}
+
+/* 信息行 */
+.b24-item-name {
+  position: absolute; left: 16px; top: 225px;
+  font-size: 18px; font-weight: 600; line-height: 24px; color: var(--b24-white);
+}
+.b24-item-tag {
+  position: absolute; left: 102px; top: 224px;
+  font-size: 12px; font-weight: 400; line-height: 17px; color: var(--b24-muted);
+}
+.b24-item-pct {
+  position: absolute; left: 221px; top: 222px;
+  font-size: 12px; font-weight: 400; line-height: 17px; color: var(--b24-dark);
+}
+.b24-item-price {
+  position: absolute; left: 263px; top: 216px;
+  font-size: 20px; font-weight: 400; line-height: 27px; color: var(--b24-dark);
+}
+
+/* Tab 栏 @y257 h16 */
+.b24-tab {
+  position: absolute; top: 255px;
+  font-size: 15px; font-weight: 400; line-height: 20px;
+  transform: translateY(1px);
+}
+.b24-tab-active { left: 16px; color: var(--b24-white); }
+.b24-tab-muted { left: 58px; color: var(--b24-muted); }
+.b24-tab-muted2 { left: 130px; color: var(--b24-muted); }

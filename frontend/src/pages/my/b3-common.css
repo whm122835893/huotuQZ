@@ -1,0 +1,53 @@
+/* 批次3 我的域二级页 公共样式
+   几何全部取自原站实测 DOM（375×812 CSS 像素，deviceScaleFactor=2）。
+   颜色全部走 Token（--b3-*），返回箭头为原站同源 PNG 本地化。
+   emoji 零使用：所有图标为原站图片或 iconfont（PuHuiTi 字体渲染），无 emoji 字符。 */
+
+.b3-page {
+  --b3-title: #000;
+  --b3-red: rgb(255, 0, 0);
+  --b3-nav-bg: #fff;
+  --b3-page-bg: #fff;
+  --b3-gray-74: rgb(74, 74, 74);
+  --b3-gray-85: rgb(85, 85, 85);
+  --b3-gray-153: rgb(153, 153, 153);
+  --b3-gray-192: rgb(192, 196, 204);
+  --b3-btn-dark: rgb(49, 49, 49);
+  --b3-white: #fff;
+  position: relative;
+  width: 375px;
+  min-height: 812px;
+  margin: 0 auto;
+  background: var(--b3-page-bg);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* 通用 navbar：高 44px，白底，返回箭头 @19,16 7×13，标题 17px/700 居中 */
+.b3-navbar {
+  position: relative;
+  width: 375px;
+  height: 44px;
+  background: var(--b3-nav-bg);
+  box-sizing: border-box;
+}
+.b3-back {
+  position: absolute;
+  left: 19px;
+  top: 16px;
+  width: 7px;
+  height: 13px;
+  object-fit: contain;
+}
+.b3-title {
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 375px;
+  height: 23px;
+  line-height: 23px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--b3-title);
+}

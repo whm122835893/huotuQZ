@@ -1,0 +1,10 @@
+########## SUMMARY ##########
+P107_leaderboard         T 1/1 f=0  E 0/3 f=0  MAE=10.77 OK
+P108_marketCapRanking    T 0/0 f=0  E 0/2 f=0  MAE=0.0 OK
+P109_rules               T 1/1 f=0  E 0/3 f=0  MAE=0.41 OK
+P110_downloadApp         T 15/15 f=0  E 0/13 f=0  MAE=10.79 OK
+P111_start               T 1/1 f=0  E 0/2 f=0  MAE=0.74 OK
+P112_webview             T 0/0 f=0  E 0/2 f=0  MAE=0.03 OK
+P113_webviewStorage      T 0/0 f=0  E 0/2 f=0  MAE=0.03 OK
+
+########## ALL PASS ##########

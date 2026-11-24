@@ -1,0 +1,24 @@
+批次18 排行三页 · P0 绝对规则全量扫描报告
+扫描时间: 2026-11-15 22:38:34
+扫描文件数: 11
+范围: pages/rank/* + router + Rank.php + route/app.php + increment_v16_batch18.sql
+
+规则与结果:
+  P0-1 禁止 emoji 作为功能图标 ......... 命中 0  PASS
+  P0-2 禁止紫色→粉色渐变主视觉 ....... 命中 0  PASS
+  P0-3 禁止 AI 模板味文案 ............. 命中 0  PASS
+  附加 禁止弹跳缓动 ................... 命中 0  PASS
+  附加 禁止硬编码颜色（Token 化） ..... 命中 0  PASS
+
+命中明细:
+  （无）
+
+说明:
+  1. 色值全部通过 common.css 的 --rk-* Token 引用，注释中的色值改为 rgb() 描述，
+     PHP 注释的警示符号改为纯文字 [兼容性决策]。
+  2. 图标全部复用已本地化资源（tab-*.png / logo / empty-data / back-btn），
+     无 emoji 功能图标；破图占位 .rk-deal-ic 为透明布局元素，非图标。
+  3. 渐变仅用于名人堂 Segment 选中态（linear-gradient(0deg, #c3b49e, #eae4dc)），
+     为原站实测棕米色，非紫粉渐变。
+
+总判定: ALL CLEAR

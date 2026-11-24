@@ -1,0 +1,21 @@
+-- =====================================================================
+-- 批次23 实名认证（P103 /pages/certification/certification
+--                 P104 /pages/certification/certificationStatus）
+--                                                —— 零 schema change
+-- 生成日期：2026-11-16
+-- =====================================================================
+-- 侦查结论（原站实测 375×812 + chunk 逆向 + 接口响应）：
+--   两页仅调用全局 POST /api/index/getConfig + POST /api/user/getUserInfo，
+--   无页面专用接口。getUserInfo 返回 real_name_authentication=1、real_name=王*绵、
+--   id_card=520******838（页面二次脱敏显示为 520************838）。
+--   P103 整页背景图 cert-verified.png（1125×2436=3x 本地化）→ 已完成实名态；
+--   P104 认证结果失败态（纯白 + 空图标占位 +「重新认证」深灰按钮）。
+--   两页均为静态真实态快照复刻，不依赖本地 DB 认证数据。
+--
+-- 按 P0「无产物不设席位」原则：不建无消费者的空表。
+-- 本批次无 CREATE TABLE / 无 ALTER TABLE / 无 INSERT / 无 UPDATE。
+-- 后端复用已存在的 Index::getConfig + User::getUserInfo（零改动），无新增端点。
+--
+-- 本文件为占位记录，执行无任何数据库变更（可安全重复执行）。
+-- =====================================================================
+SELECT 'batch23: zero schema change (P103 certification + P104 certificationStatus, static snapshot)' AS note;

@@ -1,0 +1,102 @@
+/* 批次11 盲盒模块公共样式 —— 全部取原站 DOM 实测值（2026-11-12 侦查）
+   视口 375×812，uni-app rpx 换算 1rpx=0.5px */
+.bb-page {
+  --bb-bg: #F7F9FC;
+  --bb-bg2: #F4F6FA;
+  --bb-card: #FFFFFF;
+  --bb-ink: #212121;
+  --bb-black: #000000;
+  --bb-sub: #9AA0AB;
+  --bb-gray: #787F8D;
+  --bb-red: #D93437;
+  --bb-red2: #FF4144;
+  --bb-dark: #313131;
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  min-height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: var(--bb-ink);
+  background: var(--bb-bg);
+  -webkit-font-smoothing: antialiased;
+}
+.bb-page * { box-sizing: border-box; }
+
+/* 通用 navbar 44px：标题 17px/700 居中，返回箭头 7.3×13 @(19,15.5) */
+.bb-nav {
+  position: relative;
+  height: 44px;
+  background: var(--bb-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bb-nav .nav-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--bb-black);
+  line-height: 23px;
+}
+.bb-nav .nav-back {
+  position: absolute;
+  left: 19px;
+  top: 15.5px;
+  width: 7.3px;
+  height: 13px;
+  cursor: pointer;
+}
+
+/* 空态：142×142 箱子 + 13px #999 文案（原站 empty-data.png） */
+.bb-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.bb-empty img { display: block; width: 142px; height: 142px; }
+.bb-empty span {
+  margin-top: 11px;
+  font-size: 13px;
+  line-height: 15px;
+  color: #999999;
+}
+
+/* 底部结果页双按钮：160×46，左浅右深 */
+.bb-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  height: 85px;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.bb-footer .fb-btn {
+  width: 160px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.bb-footer .fb-light {
+  border-radius: 25px;
+  background: #F1F0F4;
+  color: var(--bb-black);
+}
+.bb-footer .fb-dark {
+  border-radius: 12px;
+  background: var(--bb-dark);
+  color: var(--bb-card);
+}
+
+/* 图片占位底色（原站 fr-image / w-image 未加载时） */
+.bb-ph { background: #F5F5F5; }

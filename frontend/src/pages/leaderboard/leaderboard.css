@@ -1,0 +1,57 @@
+/* 批次25 P107 排行榜 —— 几何取自原站实测 DOM（375×812 CSS 像素，dpr=2）
+   色值 Token 化；整页背景为原站 rank_bg.png（含麦穗/今日热榜/渐变）本地化图。 */
+
+.b25-lb-page {
+  --b25-lb-bg: rgb(68, 68, 68);      /* 原站 body 深灰 */
+  --b25-lb-circle: rgb(16, 16, 16);  /* 返回键圆形底 */
+  --b25-lb-txt: rgb(153, 153, 153);  /* 空态文字灰 */
+  position: relative;
+  width: 375px;
+  min-height: 812px;
+  margin: 0 auto;
+  background: var(--b25-lb-bg);
+  overflow: hidden;
+  font-family: 'Alibaba PuHuiTi', -apple-system, sans-serif;
+}
+
+.b25-lb-bg {
+  position: absolute;
+  left: 0; top: 0;
+  width: 375px;
+  height: 844px;
+  object-fit: cover;
+  display: block;
+}
+
+.b25-lb-back-circle {
+  position: absolute;
+  left: 6px; top: 6px;
+  width: 33px; height: 33px;
+  border-radius: 50%;
+  background: var(--b25-lb-circle);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+}
+.b25-lb-back {
+  display: block;
+  width: 7px; height: 13px;
+}
+
+.b25-lb-empty {
+  position: absolute;
+  left: 117px; top: 264px;
+  width: 142px; height: 142px;
+  display: block;
+}
+
+.b25-lb-empty-text {
+  position: absolute;
+  left: 0; right: 0;
+  top: 416px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--b25-lb-txt);
+  line-height: 18px;
+}

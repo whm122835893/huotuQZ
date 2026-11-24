@@ -1,0 +1,160 @@
+/* 批次17 返佣域（P086 排行榜 / P088 被邀请人清单）公共样式
+   几何全部取自原站实测 DOM（375×812，deviceScaleFactor=2 下 CSS 像素）。
+   原站 uni-app rpx：750rpx = 375px，故 14rpx=7px / 16rpx=8px（字号如实复刻，不放大）。
+   颜色全部走 Token；图标为原站 PNG 本地化，emoji 零使用。 */
+.rb-page {
+  --rb-bg: #F4F6FA;
+  --rb-title: #000000;
+  --rb-dark: #414141;
+  --rb-sub: #999999;
+  --rb-label: #555555;
+  --rb-line: #333333;
+  --rb-white: #FFFFFF;
+  min-height: 100vh;
+  background: var(--rb-bg);
+  font-family: var(--ht-font);
+  box-sizing: border-box;
+}
+
+/* navbar：原站 u-navbar 占位 44px；返回箭头 7×13 @ (19,16)；标题 17px/700 居中 */
+.rb-navbar { height: 44px; position: relative; }
+.rb-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer; z-index: 2;
+}
+.rb-nav-title {
+  position: absolute; left: 0; right: 0; top: 0; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 700; line-height: 23px; color: var(--rb-title);
+}
+
+/* ===== P086 排行榜 ===== */
+/* u-tabs：容器 y=60；三个 item 各 130px 宽（横向 scroll-view），文字 14rpx=7px 居中。
+   原站 Range 文字 y=62 h=8；容器 10px + 文字 8px 行盒，垂直居中落在 y=61，补 1px。 */
+.rb-tabs {
+  margin: 16px 0 0 16px;          /* navbar 44 + 16 = 60 */
+  height: 10px;
+  display: flex;
+}
+.rb-tab {
+  width: 130px; flex: 0 0 130px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; user-select: none;
+  padding-top: 2px;                /* 文字 y 62 = 容器 60 + 2 */
+  box-sizing: border-box;
+}
+.rb-tab-txt {
+  font-size: 7px; line-height: 8px; color: var(--rb-dark);
+  white-space: nowrap;
+}
+/* 原站实测：日/周/月三 Tab 文字恒为 7px/400/#414141，切 Tab 仅重新请求
+   commison_rank（原站 404 弹 toast），无任何选中态视觉差异。按「不臆造」
+   不在选中项加粗/变色；.rb-tab--on 仅作 DOM 标记，不带样式。 */
+
+/* 表头：容器 y=70 h=40，三列绝对定位于 x=32/94/283，15px #999。
+   原站 Range 文字 y=84 h=16 w=30；实测 PuHuiTi 15px 字形 bbox 高 21px（跨平台
+   字体度量差异），改用系统字体族 bbox 高 17px，w 仍为 30，逐项贴近原站。
+   line-height 不改变 Range 高度（Range 取字形 bbox），故只靠字体族 + top 对齐。 */
+.rb-lb-head { position: relative; height: 40px; }
+.rb-lb-head span {
+  position: absolute; top: 15px;
+  font-size: 15px; line-height: 16px; color: var(--rb-sub);
+  font-family: Arial, "PingFang SC", sans-serif;
+  white-space: nowrap;
+}
+.rb-lb-h1 { left: 32px; }
+.rb-lb-h2 { left: 94px; }
+.rb-lb-h3 { left: 283px; }
+
+/* ===== P088 被邀请人清单 ===== */
+/* 表头：容器 x=5 y=60 w=365 h=47，5 列宽 33/66/83/83/99，8px #555 居中，下边框 #333 */
+.rb-rd-head {
+  margin: 16px 5px 0;           /* navbar 44 + 16 = 60 */
+  height: 47px;
+  display: flex;
+  border-bottom: 1px solid var(--rb-line);
+  box-sizing: border-box;
+}
+.rb-rd-cell {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8px; line-height: 9px; color: var(--rb-label);
+  white-space: nowrap;
+  /* 原站 Range 文字 y=80 h=9；容器 47px 用 align-items:center 会落在 y=79，补 3px
+     使文字盒垂直居中到 80（uni 行盒比浏览器默认紧凑，显式 line-height:9px）。 */
+  padding-top: 3px; box-sizing: border-box;
+}
+.rb-rd-c1 { width: 33px; flex: 0 0 33px; }
+.rb-rd-c2 { width: 66px; flex: 0 0 66px; }
+.rb-rd-c3 { width: 83px; flex: 0 0 83px; }
+.rb-rd-c4 { width: 83px; flex: 0 0 83px; }
+.rb-rd-c5 { width: 99px; flex: 0 0 99px; }
+
+/* ===== 空态（两页共用）：图 142×142，文字 13px #999，图下 11px ===== */
+.rb-empty {
+  display: flex; flex-direction: column; align-items: center;
+  margin-top: 100px;             /* 表头结束 110/107 + 100 = 210/207 */
+}
+.rb-empty-img { width: 142px; height: 142px; object-fit: contain; display: block; }
+.rb-empty-txt {
+  margin-top: 11px;
+  font-size: 13px; line-height: 15px; color: var(--rb-sub);
+}
+
+/* ===== toast ===== */
+.rb-toast {
+  position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%);
+  max-width: 300px; padding: 9px 16px; border-radius: 8px;
+  background: rgba(33, 33, 33, 0.92); color: var(--rb-white);
+  font-size: 13px; line-height: 18px; text-align: center; z-index: 60;
+}
+
+/* ===== P087 返佣主页 demo 注入态（chunk 真实模板） =====
+   原站该页 commision_info 404 → loading 恒 true → 整页白屏，真实态不臆造渲染。
+   demo 态用 chunk 逐字文案还原完整 UI，深色底来自 chunk font-color-white 反推（登记为推断）。
+   本态仅作 chunk 模板可验收展示，不作为整图 MAE 对比基准。 */
+.rb-demo {
+  --rb-d-bg: #2A2E3A;
+  --rb-d-card: rgba(255, 255, 255, 0.08);
+  --rb-d-line: rgba(255, 255, 255, 0.18);
+  min-height: 100vh;
+  background: var(--rb-d-bg);
+  color: var(--rb-white);
+  padding: 0 16px 40px;
+  box-sizing: border-box;
+  font-family: var(--ht-font);
+}
+.rb-d-tag {
+  display: inline-block; margin: 8px 0 12px; padding: 3px 8px;
+  font-size: 11px; line-height: 16px; color: var(--rb-white);
+  background: rgba(217, 52, 55, 0.9); border-radius: 4px;
+}
+.rb-d-sec {
+  margin-top: 20px; font-size: 20px; font-weight: 700; line-height: 28px;
+  color: var(--rb-white);
+}
+.rb-d-card {
+  margin-top: 12px; padding: 12px; border-radius: 8px;
+  background: var(--rb-d-card); border: 1px solid var(--rb-d-line);
+  box-sizing: border-box;
+}
+.rb-d-row {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 16px; line-height: 22px;
+}
+.rb-d-row + .rb-d-row { margin-top: 20px; }
+.rb-d-k { color: rgba(255, 255, 255, 0.62); display: flex; align-items: center; }
+.rb-d-v { color: var(--rb-white); font-family: var(--ht-font-num); }
+.rb-d-q {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 15px; height: 15px; margin-left: 4px; border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 10px; line-height: 15px; cursor: pointer;
+}
+.rb-d-info { display: flex; align-items: center; }
+.rb-d-avatar {
+  width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+  background: rgba(255, 255, 255, 0.12);
+}
+.rb-d-nick { margin-left: 8px; font-size: 14px; color: rgba(255, 255, 255, 0.62); }
+.rb-d-link { cursor: pointer; }
+.rb-d-arrow { font-size: 15px; color: rgba(255, 255, 255, 0.7); }

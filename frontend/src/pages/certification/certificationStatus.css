@@ -1,0 +1,56 @@
+/* 批次23 P104 实名认证-认证结果失败态 样式
+   几何全部取自原站实测 DOM（375×812 CSS 像素，deviceScaleFactor=2）。
+   颜色全部走 Token；返回箭头原站 PNG 本地化（同源图）。emoji 零使用。 */
+
+.b23-cstatus-page {
+  --b23-white: #FFFFFF;
+  --b23-title: #000000;            /* navbar 标题 17px/700 黑 */
+  --b23-fail-title: rgb(51, 51, 51); /* 「实名认证失败」 */
+  --b23-fail-desc: rgb(122, 122, 122); /* 失败描述 */
+  --b23-btn-bg: #313131;           /* rgb(49,49,49) 按钮底 */
+  position: relative;
+  width: 375px;
+  min-height: 812px;
+  margin: 0 auto;
+  background: var(--b23-white);
+  overflow: hidden;
+}
+
+/* 返回箭头 7×13 @(19,16) */
+.b23-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer; z-index: 2;
+}
+/* 标题「认证结果」17px/700 黑 @(154,11 h23)，居中于 44px navbar */
+.b23-nav-title {
+  position: absolute; left: 0; right: 0; top: 0; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 700; line-height: 23px; color: var(--b23-title);
+}
+
+/* 「实名认证失败」24px/500 @(116,136 h26)，居中 */
+.b23-fail-title {
+  position: absolute; left: 0; right: 0; top: 132px;
+  text-align: center;
+  font-size: 24px; font-weight: 500; line-height: 26px; color: var(--b23-fail-title);
+  transform: translateY(8px);
+}
+/* 描述 14px/400 @(97,176 h15)，居中 */
+.b23-fail-desc {
+  position: absolute; left: 0; right: 0; top: 174px;
+  text-align: center;
+  font-size: 14px; font-weight: 400; line-height: 15px; color: var(--b23-fail-desc);
+  transform: translateY(5px);
+}
+
+/* 重新认证按钮 @(101,484 174×46) bg #313131 br12；文字 15px/600 白 @(157,501) */
+.b23-btn-retry {
+  position: absolute; left: 101px; top: 484px;
+  width: 174px; height: 46px;
+  background: var(--b23-btn-bg); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.b23-btn-retry span {
+  font-size: 15px; font-weight: 600; line-height: 16px; color: var(--b23-white);
+  transform: translateY(5px);
+}

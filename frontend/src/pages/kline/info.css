@@ -1,0 +1,110 @@
+/* 批次24 P106 行情-详情页 样式
+   几何全部取自原站实测 DOM（375×812 CSS 像素，deviceScaleFactor=2）。
+   颜色全部走 Token；深色主题深蓝底。emoji 零使用。 */
+
+.b24-info-page {
+  --b24-bg: rgb(35, 39, 68);         /* 整页深蓝 */
+  --b24-white: #FFFFFF;
+  --b24-muted: rgb(122, 122, 122);
+  --b24-dark: rgb(51, 51, 51);       /* 价格/涨跌幅暗灰 */
+  --b24-tab-off: rgb(65, 65, 65);    /* 非激活 Tab 文字 */
+  --b24-dot: rgb(125, 116, 55);
+  --b24-bar: rgb(117, 251, 177);
+  --b24-pink: rgb(231, 141, 210);    /* 开启行情提醒按钮 */
+  --b24-orange: rgb(234, 171, 75);   /* 批量买卖按钮 */
+  position: relative;
+  width: 375px;
+  min-height: 812px;
+  margin: 0 auto;
+  background: var(--b24-bg);
+  overflow: hidden;
+}
+
+.b24-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer; z-index: 3;
+}
+.b24-nav-title {
+  position: absolute; left: 0; right: 0; top: 0; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 700; line-height: 23px; color: var(--b24-white); z-index: 2;
+}
+.b24-nav-right {
+  position: absolute; right: 6px; top: 13px;
+  font-size: 12px; font-weight: 400; line-height: 17px; color: var(--b24-white); z-index: 2;
+}
+
+/* banner 轮播：首图 @(13,52 375×163)，次图屏外 @(388,52) */
+.b24-banner { position: absolute; left: 13px; top: 52px; width: 750px; height: 163px; overflow: hidden; z-index: 1; }
+.b24-banner-img, .b24-banner-img2 {
+  display: block; width: 375px; height: 163px; object-fit: cover; object-position: center; float: left;
+}
+.b24-indicator-dot {
+  position: absolute; left: 192px; top: 171px; width: 4px; height: 4px;
+  background: var(--b24-dot); border-radius: 2px; z-index: 3;
+}
+.b24-indicator-bar {
+  position: absolute; left: 200px; top: 171px; width: 9px; height: 4px;
+  background: var(--b24-bar); border-radius: 1px; z-index: 3;
+}
+
+/* 藏品名称 / 价格 */
+.b24-name {
+  position: absolute; left: 13px; top: 226px;
+  font-size: 16px; font-weight: 400; line-height: 22px; color: var(--b24-white);
+}
+.b24-name-tag {
+  position: absolute; left: 87px; top: 228px;
+  font-size: 12px; font-weight: 400; line-height: 17px; color: var(--b24-muted);
+}
+.b24-price {
+  position: absolute; left: 13px; top: 252px;
+  font-size: 16px; font-weight: 400; line-height: 22px; color: var(--b24-dark);
+}
+.b24-pct {
+  position: absolute; left: 100px; top: 255px;
+  font-size: 12px; font-weight: 400; line-height: 17px; color: var(--b24-dark);
+}
+
+/* 数据网格：标签 + 数值 */
+.b24-cell, .b24-cell-v {
+  position: absolute; font-size: 12px; font-weight: 400; line-height: 14px;
+  transform: translateY(1px);
+}
+.b24-cell { color: var(--b24-muted); }
+.b24-cell-v { color: var(--b24-white); }
+.b24-l1 { left: 13px; top: 281px; }  .b24-l1v { left: 105px; top: 279px; }
+.b24-r1 { left: 170px; top: 281px; } .b24-r1v { left: 267px; top: 279px; }
+.b24-l2 { left: 13px; top: 303px; }  .b24-l2v { left: 105px; top: 301px; }
+.b24-r2 { left: 170px; top: 303px; } .b24-r2v { left: 254px; top: 301px; }
+.b24-l3 { left: 13px; top: 325px; }  .b24-l3v { left: 105px; top: 323px; }
+.b24-r3 { left: 170px; top: 325px; } .b24-r3v { left: 242px; top: 323px; }
+
+/* sticky Tab 栏 + 7px 缩放态 Tab 文字 */
+.b24-sticky { position: absolute; left: 0; top: 367px; width: 375px; height: 10px; background: var(--b24-bg); z-index: 1; }
+.b24-itab { position: absolute; top: 368px; font-size: 7px; font-weight: 400; line-height: 8px; transform: translateY(1px); z-index: 2; }
+.b24-itab-1 { left: 43px; color: var(--b24-white); }
+.b24-itab-2 { left: 136px; color: var(--b24-tab-off); }
+.b24-itab-3 { left: 236px; color: var(--b24-tab-off); }
+.b24-itab-4 { left: 340px; color: var(--b24-tab-off); }
+.b24-itab-5 { left: 443px; color: var(--b24-tab-off); }
+
+/* 底部按钮 */
+.b24-btn-notice, .b24-btn-batch {
+  position: absolute; top: 763px; width: 144px; height: 38px; border-radius: 25px;
+  display: flex; align-items: center; justify-content: center;
+}
+.b24-btn-notice { left: 16px; background: var(--b24-pink); }
+.b24-btn-batch { left: 176px; background: var(--b24-orange); }
+.b24-btn-notice span, .b24-btn-batch span {
+  font-size: 15px; font-weight: 400; line-height: 16px; color: var(--b24-white);
+  transform: translateY(1px);
+}
+.b24-score {
+  position: absolute; left: 331px; top: 766px;
+  font-size: 24px; font-weight: 400; line-height: 28px; color: var(--b24-white);
+}
+.b24-follow {
+  position: absolute; left: 337px; top: 789px;
+  font-size: 10px; font-weight: 400; line-height: 12px; color: var(--b24-white);
+}

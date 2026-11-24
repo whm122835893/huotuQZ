@@ -1,0 +1,30 @@
+# 依赖目录（可重新安装）
+node_modules/
+frontend/node_modules/
+backend/vendor/
+
+# 构建产物（可由源码重新构建）
+frontend/dist/
+dist/
+
+# 运行时日志与缓存
+backend/runtime/
+*.log
+
+# 敏感配置（数据库密码等，禁止入库）
+backend/.env
+.env
+*.env.local
+!.env.example
+!backend/.example.env
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# 临时文件
+tmp/
+.tmp/

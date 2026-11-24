@@ -1,0 +1,86 @@
+/* 批次8 订单域公共样式 —— 全部取原站实测值（2026-11-11 侦查） */
+.ord-page {
+  --ord-bg: #F7F9FC;
+  --ord-card: #FFFFFF;
+  --ord-ink: #212121;
+  --ord-black: #000000;
+  --ord-sub: #9AA0AB;
+  --ord-gray: #636363;
+  --ord-line: #EEEEEE;
+  --ord-red: #D93437;
+  --ord-green: #00B578;
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--ord-bg);
+  color: var(--ord-ink);
+  box-sizing: border-box;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+.ord-page * { box-sizing: border-box; }
+
+/* 导航栏 44px 白底，标题 17px/700 居中 */
+.ord-nav {
+  position: relative;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+}
+.ord-nav .nav-title { font-size: 17px; font-weight: 700; color: var(--ord-black); line-height: 23px; }
+.ord-nav .nav-back {
+  position: absolute; left: 18.8px; top: 15.5px;
+  width: 7.3px; height: 13px; cursor: pointer;
+}
+.ord-nav .nav-extra {
+  position: absolute; right: 16px; top: 11px;
+  width: 22px; height: 22px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* 分割线 */
+.ord-hr { height: 1px; background: var(--ord-line); }
+
+/* 空态：142x142 箱子 + 13px #999 文案 */
+.ord-empty { display: flex; flex-direction: column; align-items: center; width: 100%; }
+.ord-empty img { display: block; width: 142px; height: 142px; }
+.ord-empty span { margin-top: 11px; font-size: 13px; line-height: 15px; color: #999999; }
+
+/* 到底提示 */
+.ord-nomore { width: 100%; text-align: center; font-size: 12px; color: #999999; padding: 14px 0 20px; }
+
+/* 白卡 */
+.ord-panel { background: var(--ord-card); border-radius: 12px; }
+
+/* 主 Tab（常规/求购/委托/出售）：选中 16px/700 + 红色 32x3 下划线 */
+.ord-top-tabs {
+  position: relative; height: 44px;
+  background: #FFFFFF; border-bottom: 1px solid var(--ord-line);
+}
+.ord-top-tabs .tt-list {
+  position: absolute; left: 50.4px; top: 0; width: 274.2px; height: 44px;
+  display: flex;
+}
+.ord-top-tabs .tt {
+  position: relative; flex: 1; font-size: 14px; color: var(--ord-sub);
+  height: 44px; display: flex; align-items: center; justify-content: center;
+}
+.ord-top-tabs .tt.on { font-size: 16px; font-weight: 700; color: var(--ord-ink); }
+.ord-top-tabs .tt.on::after {
+  content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 32px; height: 3px; border-radius: 3px; background: var(--ord-red);
+}
+
+/* 状态胶囊 Tab（全部/已完成/…）：选中黑底白字，未选灰底 */
+.ord-pills { display: flex; gap: 8px; height: 68px; padding: 20px 12px 20px; align-items: center; overflow-x: auto; }
+.ord-pills::-webkit-scrollbar { display: none; }
+.ord-pills .pill {
+  flex: 0 0 auto; height: 28px; padding: 0 14px; border-radius: 499px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: var(--ord-sub); background: #EEEEEE;
+}
+.ord-pills .pill.on { color: #FFFFFF; background: var(--ord-ink); font-weight: 500; }

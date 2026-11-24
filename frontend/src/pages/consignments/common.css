@@ -1,0 +1,53 @@
+/* 批次10 寄售大厅公共样式 —— 全部取原站 DOM 实测值（2026-11-11 侦查） */
+.cs-page {
+  --cs-bg: #F7F9FC;
+  --cs-card: #FFFFFF;
+  --cs-ink: #212121;
+  --cs-black: #000000;
+  --cs-sub: #9AA0AB;
+  --cs-red: #D93437;
+  --cs-input: #F7F9FC;
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: var(--cs-bg);
+  color: var(--cs-ink);
+  box-sizing: border-box;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+.cs-page * { box-sizing: border-box; }
+
+/* 通用 navbar 44px 白底：标题 17px/700 居中，返回箭头 7×13 @(19,16) */
+.cs-nav {
+  position: relative;
+  height: 44px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cs-nav .nav-title { font-size: 17px; font-weight: 700; color: var(--cs-black); line-height: 23px; }
+.cs-nav .nav-back {
+  position: absolute; left: 19px; top: 15.5px;
+  width: 7.3px; height: 13px; cursor: pointer;
+}
+.cs-nav .nav-extra {
+  position: absolute; right: 16px; top: 11px;
+  height: 22px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+
+/* 空态：142×142 箱子 + 13px #999 文案 */
+.cs-empty { display: flex; flex-direction: column; align-items: center; width: 100%; }
+.cs-empty img { display: block; width: 142px; height: 142px; }
+.cs-empty span { margin-top: 11px; font-size: 13px; line-height: 15px; color: #999999; }
+
+/* 白卡 r12，左右 20px */
+.cs-panel { background: var(--cs-card); border-radius: 12px; margin: 0 20px; }
+
+/* 红色圆形勾选 20×20 */
+.cs-check { width: 20px; height: 20px; display: block; }

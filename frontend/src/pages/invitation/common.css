@@ -1,0 +1,205 @@
+/* 批次16 邀请域（P084 邀请活动 / P085 邀请记录）公共样式
+   颜色全部走 Token；图标为原站 PNG 本地化，emoji 零使用。
+   rpx→px：设计稿 750rpx = 375px，1rpx = 0.5px。 */
+.iv-page {
+  --iv-bg: #F7F9FC;
+  --iv-white: #FFFFFF;
+  --iv-dark: #212121;
+  --iv-black: #000000;
+  --iv-sub: #787F8D;
+  --iv-muted: #9AA0AB;
+  --iv-fill: #F4F5F5;
+  --iv-input: #F7F8FA;
+  --iv-line: #E8EBF0;
+  --iv-btn-off: #C2C5CC;
+  --iv-btn-on: #D93437;
+  --iv-toast-bg: rgba(33, 33, 33, 0.92);
+  min-height: 100vh;
+  background: var(--iv-bg);
+  font-family: var(--ht-font);
+  box-sizing: border-box;
+}
+
+/* navbar：原站 w-navbar placeholder 占文档流 44px，标题 17px/700 纯黑居中 */
+.iv-navbar { height: 44px; position: relative; background: var(--iv-bg); }
+.iv-title {
+  position: absolute; left: 0; right: 0; top: 0; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; font-weight: 700; line-height: 23px; color: var(--iv-black);
+  /* 原站 navbar 标题文字 Range 顶边 y=11，PuHuiTi 行盒居中落在 y=10，补 1px */
+  padding-top: 1px;
+}
+.iv-back {
+  position: absolute; left: 19px; top: 16px;
+  width: 7px; height: 13px; cursor: pointer; z-index: 2;
+}
+
+/* 内容区 padding 24rpx 40rpx 80rpx = 12px 20px 40px */
+.iv-content {
+  padding: 12px 20px 40px;
+  display: flex; flex-direction: column;
+}
+
+/* 白色卡片：圆角 24rpx = 12px，padding 24rpx = 12px */
+.iv-card {
+  background: var(--iv-white); border-radius: 12px; padding: 12px;
+  box-sizing: border-box;
+}
+.iv-card + .iv-card { margin-top: 12px; }
+
+/* ---- 邀请码卡：Tab 条 ---- */
+.iv-tabs {
+  height: 36px; padding: 2px; box-sizing: border-box;
+  background: var(--iv-fill); border-radius: 8px;
+  display: flex; align-items: center;
+}
+.iv-tab {
+  flex: 1; height: 100%; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 500; line-height: 18px;
+  cursor: pointer; user-select: none;
+  background: transparent; color: var(--iv-sub);
+  font-family: 'PuHuiTi', var(--ht-font);
+}
+.iv-tab--on { background: var(--iv-dark); color: var(--iv-white); }
+
+/* ---- 邀请码卡：内容区（132rpx = 66px） ---- */
+.iv-code-box {
+  height: 66px; margin-top: 12px; padding: 0 12px; box-sizing: border-box;
+  background: var(--iv-fill); border-radius: 8px;
+  display: flex; align-items: center;
+}
+.iv-code-left { flex: 1; min-width: 0; display: flex; align-items: center; }
+.iv-code-text {
+  font-family: var(--ht-font-num); font-size: 24px; line-height: 28px;
+  color: var(--iv-dark);
+}
+.iv-copy {
+  width: 16px; height: 16px; margin-left: 8px; flex-shrink: 0;
+  cursor: pointer; object-fit: contain;
+}
+.iv-qr-line {
+  width: 1px; height: 32px; background: var(--iv-line);
+  margin: 0 12px; flex-shrink: 0;
+}
+.iv-qr-col {
+  flex-shrink: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  /* 原站二维码图 (295,123)，内容盒居中落在 122，整体补 1px */
+  transform: translateY(1px);
+}
+/* 原站 uni-image 把白底/圆角放在外层包裹，内层 IMG 透明无圆角（批次15 同款口径） */
+.iv-qr-wrap {
+  width: 36px; height: 36px; background: var(--iv-white);
+  border-radius: 4px; overflow: hidden;
+}
+.iv-qr-img {
+  width: 36px; height: 36px; object-fit: contain; display: block;
+}
+.iv-qr-label {
+  margin-top: 3px; font-size: 10px; line-height: 14px; color: var(--iv-muted);
+}
+
+/* ---- 邀请链接（Tab=link）内容区 ---- */
+.iv-link-box {
+  height: 66px; margin-top: 12px; padding: 0 12px; box-sizing: border-box;
+  background: var(--iv-fill); border-radius: 8px;
+  display: flex; align-items: center;
+}
+.iv-link-text {
+  flex: 1; min-width: 0; margin-right: 8px;
+  font-size: 12px; line-height: 17px; color: var(--iv-dark);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ---- 助力好友卡 ---- */
+.iv-assist-title { font-size: 14px; font-weight: 500; line-height: 20px; color: var(--iv-dark); }
+.iv-assist-row {
+  height: 48px; margin-top: 8px; padding: 4px 4px 4px 12px; box-sizing: border-box;
+  background: var(--iv-input); border-radius: 8px;
+  display: flex; align-items: center;
+}
+.iv-assist-field { flex: 1; min-width: 0; position: relative; display: flex; align-items: center; }
+.iv-assist-input {
+  flex: 1; min-width: 0; border: none; outline: none; background: transparent;
+  font-size: 13px; line-height: 18px; color: var(--iv-dark); font-family: var(--ht-font);
+}
+/* 原站 u-input placeholder 是真实 DOM 文本节点（Range 可测），本项目用绝对定位 span 复刻 */
+.iv-ph {
+  position: absolute; pointer-events: none;
+  font-size: 13px; line-height: 18px; font-weight: 400; color: var(--iv-muted);
+  white-space: nowrap;
+}
+.iv-ph--assist { left: 0; top: 50%; transform: translateY(-50%); }
+.iv-assist-btn {
+  height: 36px; padding: 0 16px; border-radius: 6px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 500; line-height: 18px; color: var(--iv-white);
+  background: var(--iv-btn-off); cursor: pointer; user-select: none;
+}
+.iv-assist-btn--on { background: var(--iv-btn-on); }
+
+/* ---- 好友列表区 ---- */
+.iv-friend { margin-top: 12px; display: flex; flex-direction: column; }
+.iv-friend-title { font-size: 14px; font-weight: 500; line-height: 20px; color: var(--iv-dark); }
+.iv-search {
+  height: 40px; margin-top: 8px; padding: 0 12px; box-sizing: border-box;
+  background: var(--iv-white); border-radius: 8px;
+  display: flex; align-items: center;
+}
+.iv-search-icon { width: 16px; height: 16px; flex-shrink: 0; object-fit: contain; }
+.iv-search-field { flex: 1; min-width: 0; position: relative; display: flex; align-items: center; }
+.iv-search-input {
+  flex: 1; min-width: 0; border: none; outline: none; background: transparent;
+  font-size: 13px; line-height: 18px; color: var(--iv-dark); font-family: var(--ht-font);
+}
+.iv-ph--search { left: 0; top: 50%; transform: translateY(-50%); }
+
+/* 空态：min-height 480rpx = 240px，居中 284rpx = 142px 图。
+   原站 gap-pf-y-16 = 8px：好友列表标题/搜索框与空态图之间留 8px 上间距。 */
+.iv-empty {
+  width: 100%; min-height: 240px; margin-top: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.iv-empty-img { width: 142px; height: 142px; object-fit: contain; }
+
+/* ---- P085 统计卡 ---- */
+.iv-stat {
+  background: var(--iv-white); border-radius: 12px; padding: 16px 12px;
+  box-sizing: border-box; display: flex; flex-direction: column; align-items: center;
+}
+.iv-stat-num {
+  font-family: var(--ht-font-num); font-size: 40px; line-height: 40px; color: var(--iv-dark);
+}
+.iv-stat-label {
+  margin-top: 4px; font-size: 12px; line-height: 17px; color: var(--iv-muted);
+}
+
+/* ---- P085 好友列表项（原站 recordList 模板；侦查实测 my_list 为空，默认不渲染） ---- */
+.iv-list { display: flex; flex-direction: column; }
+.iv-row {
+  margin-top: 8px; padding: 14px 12px; box-sizing: border-box;
+  background: var(--iv-white); border-radius: 12px; display: flex; align-items: center;
+}
+.iv-row-avatar {
+  width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+  object-fit: cover; background: var(--iv-fill);
+}
+.iv-row-meta { flex: 1; min-width: 0; margin-left: 10px; display: flex; flex-direction: column; }
+.iv-row-nick { font-size: 14px; font-weight: 500; line-height: 20px; color: var(--iv-dark); }
+.iv-row-sub { font-size: 11px; line-height: 16px; color: var(--iv-muted); margin-top: 3px; }
+.iv-row-tags { margin-left: 8px; flex-shrink: 0; display: flex; flex-direction: column; }
+.iv-tag {
+  min-width: 52px; height: 20px; padding: 0 6px; margin-top: 6px; box-sizing: border-box;
+  border-radius: 4px; display: flex; align-items: center; justify-content: center;
+  font-size: 10px; line-height: 14px; color: var(--iv-white); background: var(--iv-btn-off);
+}
+.iv-tag--on { background: var(--iv-dark); }
+
+/* toast */
+.iv-toast {
+  position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%);
+  max-width: 300px; padding: 9px 16px; border-radius: 8px;
+  background: var(--iv-toast-bg); color: var(--iv-white);
+  font-size: 13px; line-height: 18px; text-align: center; z-index: 60;
+}

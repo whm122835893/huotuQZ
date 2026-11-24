@@ -1,0 +1,12 @@
+/* 批次29 P112 webview —— 无 url 参数的空白 webview 真实态 */
+
+.b29-wv-page {
+  --b29-wv-bg: #FFFFFF;
+  position: relative;
+  width: 375px;
+  min-height: 812px;
+  margin: 0 auto;
+  background: var(--b29-wv-bg);
+  overflow: hidden;
+  font-family: 'Alibaba PuHuiTi', -apple-system, sans-serif;
+}

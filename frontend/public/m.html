@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>火兔复刻 · 批次7-19 手机验收</title>
+<style>
+  :root {
+    --page-bg: #F5F6F8;
+    --card-bg: #FFFFFF;
+    --text-main: #1A1D24;
+    --text-sub: #7A8190;
+    --line: #E4E7ED;
+    --accent: #2A51EF;
+    --accent-soft: #EDF1FF;
+    --radius: 12px;
+    --gap: 12px;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    margin: 0;
+    padding: calc(16px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom));
+    background: var(--page-bg);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 480px; margin: 0 auto; }
+  h1 { font-size: 19px; font-weight: 600; margin: 0 0 6px; }
+  .sub { color: var(--text-sub); font-size: 13px; margin: 0 0 18px; }
+  .tip {
+    background: var(--accent-soft);
+    color: var(--text-main);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+  .tip b { color: var(--accent); font-weight: 600; }
+  .group-title {
+    font-size: 12px;
+    color: var(--text-sub);
+    letter-spacing: 1px;
+    margin: 0 0 8px 4px;
+  }
+  a.btn {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    padding: 10px 14px;
+    margin-bottom: var(--gap);
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--text-main);
+    text-decoration: none;
+    transition: background-color .15s ease;
+  }
+  a.btn:active { background: var(--accent-soft); }
+  .num {
+    flex: 0 0 34px;
+    font-size: 12px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .label { flex: 1 1 auto; font-size: 16px; font-weight: 500; }
+  .label small { display: block; font-size: 12px; font-weight: 400; color: var(--text-sub); margin-top: 2px; }
+  .arrow { flex: 0 0 auto; color: var(--text-sub); font-size: 18px; line-height: 1; }
+  .login { border-color: var(--accent); }
+  .login .label { color: var(--accent); }
+  .foot { color: var(--text-sub); font-size: 12px; margin-top: 20px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>火兔复刻 · 批次7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 19 验收</h1>
+  <p class="sub">龙晶商城 7 页 + 订单域 11 页 + 我的资产 4 页 + 寄售大厅 3 页 + 盲盒 5 页 + 商品详情 3 页 + 转赠 2 页 + 钱包/签到/邀请 4 页 + 返佣 3 页 + 批次3 占位落地（设置/抽奖/海报/我的页 9 入口）+ 排行 3 页 + 抽奖 2 页，点下面任意一项直接打开。</p>
+
+  <div class="tip">
+    首次打开会先到 <b>登录页</b>：账号密码请联系项目维护者获取。
+    登录一次之后，本机再点下面任何页面都会直接进入，无需重复登录。
+  </div>
+
+  <p class="group-title">先登录</p>
+  <a class="btn login" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/login/login">
+    <span class="num">00</span><span class="label">登录<small>首次使用请先点这里</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">默认态（原站为空数据）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/shop/shop">
+    <span class="num">01</span><span class="label">龙晶商城<small>横幅 + 双入口 + 空态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/shop/detailList">
+    <span class="num">02</span><span class="label">龙晶明细<small>三 tab + 空态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/shop/record">
+    <span class="num">03</span><span class="label">兑换记录<small>空态</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">预览态（demo=1，有内容可点）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/shop/exchange?demo=1">
+    <span class="num">04</span><span class="label">确认订单<small>加减数量 / 立即兑换</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/shop/detail/goods?id=1&demo=1">
+    <span class="num">05</span><span class="label">商品详情<small>主图 / 价格 / 底部按钮</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/shop/detail/collection?id=1&demo=1">
+    <span class="num">06</span><span class="label">藏品详情<small>发行量 / STORY / 购买须知</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/shop/detail/box?id=1&demo=1">
+    <span class="num">07</span><span class="label">盲盒详情<small>作品列表 / 概率 / 购买须知</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">批次8 订单域 · 真实数据态</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/list">
+    <span class="num">08</span><span class="label">订单列表<small>4 条真实订单 / 主Tab / 状态筛选</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/defaultDetail?id=1493003&orderType=3">
+    <span class="num">09</span><span class="label">订单详情<small>盾牌状态 / 信息行 / 实付 / 双按钮</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/search">
+    <span class="num">10</span><span class="label">订单搜索<small>输入订单号或商品名后回车</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">批次8 订单域 · 原站空态</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/beg/list">
+    <span class="num">11</span><span class="label">我的求购<small>圆角 Tab + 暂无数据</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/entrust/list">
+    <span class="num">12</span><span class="label">我的委托<small>圆角 Tab + 暂无数据</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/beg/info">
+    <span class="num">13</span><span class="label">求购详情<small>空壳白卡态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/entrust/info">
+    <span class="num">14</span><span class="label">委托详情<small>空壳白卡态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/orderSubmit">
+    <span class="num">15</span><span class="label">确认订单<small>无上下文时 ￥NaN 态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/firstSaleConfirm">
+    <span class="num">16</span><span class="label">订单确认<small>订单信息缺失 / 禁用按钮</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">批次8 订单域 · 预览态（demo=1，有内容可点）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/marketDetail?id=1493003&demo=1">
+    <span class="num">17</span><span class="label">市场订单详情<small>藏品已售出 / 订单信息</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/regiftDetail?id=1493003&demo=1">
+    <span class="num">18</span><span class="label">赠送订单详情<small>订单信息 + 双按钮</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/orderSubmit?demo=1">
+    <span class="num">19</span><span class="label">确认订单（预览）<small>商品 / 区块链地址 / 汇付</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/firstSaleConfirm?demo=1">
+    <span class="num">20</span><span class="label">订单确认（预览）<small>支付方式 / 数量 / 立即购买</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/beg/info?demo=1">
+    <span class="num">21</span><span class="label">求购详情（预览）<small>订单详情 + 状态时间轴</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/order/entrust/info?demo=1">
+    <span class="num">22</span><span class="label">委托详情（预览）<small>订单详情 + 继续委托</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">批次9 我的资产 · 真实数据态（3 个藏品 / 持有 4 份）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/myCollection/myCollection">
+    <span class="num">23</span><span class="label">我的藏品<small>藏品/盲盒 Tab + 3 张持有卡（可点进详情）</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/myCollection/holdingsDetail?id=28&types=2">
+    <span class="num">24</span><span class="label">持仓详情<small>藏品总数 2 / 编号 #61247 #16044（可点编号）</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/myCollection/collectionDetails?id=2643699">
+    <span class="num">25</span><span class="label">藏品详情<small>粉色模糊主视觉 / 发行 85,268 / 购买须知</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/myCollection/search">
+    <span class="num">26</span><span class="label">藏品搜索<small>输入 2026 触发联想 / 空态</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">批次10 寄售大厅 · 真实数据态（P069-P071）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/consignments/consignments?id=2643699">
+    <span class="num">27</span><span class="label">寄售（下单表单）<small>藏品信息 / 输入价格实时试算服务费与收益</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/consignments/consignments">
+    <span class="num">28</span><span class="label">寄售（无 id 白屏）<small>原站默认态 1:1 还原：不带参数时整页白屏</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/consignments/myConsignment">
+    <span class="num">29</span><span class="label">我的寄售<small>原站空态：目前没有任何数据</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/consignments/search">
+    <span class="num">30</span><span class="label">寄售搜索<small>输入 2026 显示三 Tab / 回车搜索 / 搜索历史</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">批次10 · 预览态（demo=1，有内容可点）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/consignments/myConsignment?demo=1">
+    <span class="num">31</span><span class="label">我的寄售（预览）<small>寄售中列表项 / 共 1 件寄售 / 取消寄售</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">批次11 盲盒 · 默认态（原站为空数据，P072-P076）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/blindBox/index">
+    <span class="num">32</span><span class="label">我的盲盒<small>灰占位方块 / 共有个 / 一键开启 / 逐个拆开</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/blindBox/blindBoxDetails">
+    <span class="num">33</span><span class="label">盲盒详情（无 id 白屏）<small>原站默认态 1:1 还原：不带实例 id 时整页白屏</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/blindBox/blindBoxDetails?id=2643699">
+    <span class="num">34</span><span class="label">盲盒详情（带 id）<small>粉色主视觉 / 发行 85,268 + 流通 0 双徽标 / 购买须知</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/blindBox/openRecord?id=33">
+    <span class="num">35</span><span class="label">开盒记录<small>原站空态：目前没有任何数据</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/blindBox/result">
+    <span class="num">36</span><span class="label">盲盒结果（一键开启）<small>空态：仅提示语 + 我的数字藏品 / 继续购买</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/blindBox/result2">
+    <span class="num">37</span><span class="label">盲盒结果（逐个拆开）<small>空态：仅「藏品编号： #」+ 双按钮</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">批次11 · 预览态（demo=1，有内容可点）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/blindBox/index?demo=1">
+    <span class="num">38</span><span class="label">我的盲盒（预览）<small>共有 3 个 / 一键开启→结果 / 逐个拆开→结果2</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/blindBox/openRecord?demo=1">
+    <span class="num">39</span><span class="label">开盒记录（预览）<small>抽中「2026兔耳」列表项结构</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/blindBox/result?demo=1">
+    <span class="num">40</span><span class="label">盲盒结果（预览）<small>2 条开盒结果 / 藏品编号 / 稀有度图标</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/blindBox/result2?demo=1">
+    <span class="num">41</span><span class="label">盲盒结果2（预览）<small>稀有度图标 / 200×200 主图 / 藏品编号</small></span><span class="arrow">›</span>
+  </a>
+
+
+  <p class="group-title">批次12 商品详情 · 真实数据（P077-P079）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/product/collection?id=33&batch_id=4">
+    <span class="num">42</span><span class="label">藏品详情 · 2026泡泡探险<small>发行 200,000 / 发售价 ¥11.11 / 作者介绍 / 购买须知</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/product/collection?id=20&batch_id=3">
+    <span class="num">43</span><span class="label">藏品详情 · 2026登机牌<small>发行 688,888 / 发售价 ¥3.98 / 登机牌主图</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/product/notice?keyword=2026%E7%99%BB%E6%9C%BA%E7%89%8C">
+    <span class="num">44</span><span class="label">相关公告 · 8 条列表<small>白色圆角卡片 / 右下角日期 / 从商品详情「公告」Tab 进入</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">批次12 · 预览态与空态</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/product/box?id=33&demo=1">
+    <span class="num">45</span><span class="label">盲盒详情（预览）<small>原站当前无在售盲盒，用真实商品快照还原 / ¥11.11 立即抢购</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/product/notice?keyword=2026%E6%B3%A1%E6%B3%A1%E6%8E%A2%E9%99%A9">
+    <span class="num">46</span><span class="label">相关公告（空态）<small>粉色开箱插画 / 目前没有任何数据</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/product/notice">
+    <span class="num">47</span><span class="label">相关公告（默认）<small>原站无 keyword 时不发请求，纯 navbar 空页</small></span><span class="arrow">›</span>
+  </a>
+
+
+  <p class="group-title">批次13 转赠 · 真实态（P080-P081）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/regift/record">
+    <span class="num">48</span><span class="label">转赠记录 · 我转赠的<small>双 Tab / 粉色开盒空态 / 目前没有任何数据</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/regift/record?types=2">
+    <span class="num">49</span><span class="label">转赠记录 · 我收到的<small>切 Tab 重新请求 types=2，同样空态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/regift/regift?id=2643699">
+    <span class="num">50</span><span class="label">转赠 · 2026兔耳<small>藏品卡片 / 选择用户 / 3 条须知 / 确认转赠；页内输入手机号可搜用户、点确认弹操作密码</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/myCollection/collectionDetails?id=2643699">
+    <span class="num">51</span><span class="label">藏品详情 · 转赠记录入口<small>批次9 已完成页，点 navbar 右侧「转赠记录」直达 P080</small></span><span class="arrow">›</span>
+  </a>
+
+
+  <p class="group-title">批次14 钱包 · 真实态（P082）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/wallet/wallet">
+    <span class="num">52</span><span class="label">我的钱包 · 已开户<small>汇付红卡 / 加号条 / 「进入钱包」；点卡片、加号或底部按钮均弹本地接口真实快照结果卡</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/wallet/wallet?unopen=1">
+    <span class="num">53</span><span class="label">我的钱包 · 未开户分支<small>computed 文案切为「开通此钱包」，点击走 openAccount 返回「您已经开户了」</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">批次15 签到 · 真实态（P083）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/sign/index">
+    <span class="num">54</span><span class="label">签到有礼 · 2026年11月<small>全屏背景图 / 用户卡 UID 173634 / 35 格日历（4·5 已签、14「今」）/ 立即签到；点左箭头切月、点底部按钮弹「签到成功」</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/my">
+    <span class="num">55</span><span class="label">授权联动验收 · 我的钱包入口<small>用户已授权：在「我的」页点「我的钱包」卡片，会真实跳转到 P082 钱包页（不再是占位提示）</small></span><span class="arrow">›</span>
+  </a>
+
+  <p class="group-title">批次16 邀请 · 真实态（P084-P085）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/invitation/invitation">
+    <span class="num">56</span><span class="label">邀请活动 · 我的邀请码<small>HT173634 / 原站二维码 / 助力好友 / 好友列表（0人）/ 搜索框；点「邀请链接」Tab、复制图标、去助力均有反馈</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/invitation/invitation?tab=link">
+    <span class="num">57</span><span class="label">邀请活动 · 邀请链接分支<small>Tab 直接切到「邀请链接」，原站真实串 undefined&amp;content=HT173634 如实复刻，二维码隐藏</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/invitation/invitationrecord">
+    <span class="num">58</span><span class="label">邀请记录 · 空态<small>统计卡「0 总人数」+ 好友列表（0人）+ 粉色空箱插画（独立入口页，原站 P084 无跳转按钮）</small></span><span class="arrow">›</span>
+  </a>
+
+
+  <p class="group-title">批次17 返佣 · 真实态（P086-P088）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/rebate/leaderboard">
+    <span class="num">59</span><span class="label">返佣排行榜 · 日排行<small>三 Tab / 排名·用户·返佣金额表头 / 空态图；点「周排行」「月排行」会重新请求本地接口</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/rebate/leaderboard?tab=week">
+    <span class="num">60</span><span class="label">返佣排行榜 · 周排行<small>tab=week 直达周排行分支（原站三 Tab 无选中态视觉差异，如实复刻）</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/rebate/leaderboard?tab=month">
+    <span class="num">61</span><span class="label">返佣排行榜 · 月排行<small>tab=month 直达月排行分支</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/rebate/rebate?demo=1">
+    <span class="num">62</span><span class="label">返佣主页 · chunk 模板注入态<small>?demo=1：原站接口 404 真实态是白屏，此态逐字还原 chunk 文案与字段便于验收</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/rebate/rebateInviteDetail">
+    <span class="num">63</span><span class="label">被邀请人清单 · 空态<small>5 列表头（昵称/加入时间/首次交易日期/总交易金额/本自然月交易金额）+ 空态图</small></span><span class="arrow">›</span>
+  </a>
+  <p class="group-title">批次3 占位清理 · 用户授权联动验收</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/setting">
+    <span class="num">64</span><span class="label">设置 · 批次3 占位落地<small>基本信息/账户/其他三组 + 退出登录；点任意行有结果反馈</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/lottery/lottery?id=2">
+    <span class="num">65</span><span class="label">抽奖活动 · 批次3 占位落地<small>老虎机九宫格空态 / 当前可抽奖 0次 / 暂无抽奖活动 / 抽奖记录空态；点按钮有反馈</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/my">
+    <span class="num">66</span><span class="label">批次3 占位验收 · 我的页 9 个入口<small>用户已授权：设置图标/编辑个人信息/打卡活动/邀请海报/抽奖活动/我的订单/我的钱包/我的资产/藏品盲盒 全部可点，不再是占位提示</small></span><span class="arrow">›</span>
+  </a>
+  <p class="group-title">批次18 排行 · 真实态（P089-P091）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/rank/masterRank">
+    <span class="num">67</span><span class="label">大师动态 · 纯空态<small>navbar「大师动态」+ 空盒图；原站无专用接口、无 TabBar，list 恒空，如实复刻</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/rank/rankList">
+    <span class="num">68</span><span class="label">名人堂 · 未开启空态<small>4 Tab + 购入/售出榜切换 + 三领奖台 --/¥0 + 「目前没有任何数据」；点 Segment / 顶部 Tab / 底部 Tab 均可交互</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/rank/userBuy">
+    <span class="num">69</span><span class="label">热榜 · 6 条真实榜单<small>marketrebang 真实数据：熊小七/青花瓷-龙王/大吉大利/天官赐福/今晚吃鸡/弥勒；前三名透明底浅金字、后三名白卡深字 + 排名 4/5/6</small></span><span class="arrow">›</span>
+  </a>
+  <p class="group-title">批次19 抽奖 · 真实态（P093-P094）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/lottery/record">
+    <span class="num">70</span><span class="label">中奖记录 · 空盒图空态<small>整页 + navbar 均 rgb(247,249,252)；空盒图 142×142 @117,97；statistics 返回 data:[] 空态、无 TabBar</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/lottery/rule">
+    <span class="num">71</span><span class="label">活动规则 · 空白规则卡<small>白底 navbar + 空白卡 @16,59 343×650 br12 rgb(244,246,250)；正文 lotteryRule 恒 null、配置全空，如实复刻空白</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/lottery/lottery?id=2">
+    <span class="num">72</span><span class="label">抽奖活动 · 我的中奖联动验收<small>P092 右上「我的中奖」点击跳 #/pages/lottery/record?id=2；本批把 toast 占位改为真实跳转，视觉零改动</small></span><span class="arrow">›</span>
+  </a>
+  <p class="group-title">批次20 抽奖活动 · 真实态（P095-P099）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/draw/communityShare/communityShare">
+    <span class="num">73</span><span class="label">分享助力 · 上传空态<small>黑卡 rgb(48,41,32) br20 padding 12px 20px +「分享图片」按钮；上传框 80×80 #E5E5E5（加号原站 404 如实空白）；空态 uicon 字体 \ue62f 90px；底部 fixed 提交钮 338×46</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/draw/drawResult/drawResult">
+    <span class="num">74</span><span class="label">中签结果 · 永久加载态<small>chunk onLoad JSON.parse(undefined) 异常 → loading 恒 true；spinner 26×26 圆环 #C8C8C8 旋转 +「加载中...」wrapper @165,348，如实复刻</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/draw/InvitationFriendAssist/InvitationFriendAssist">
+    <span class="num">75</span><span class="label">邀请好友助力 · 空态<small>邀请钮 343×46 + 黑卡 343×51 计数恒 0；表头四列 62/78/109/62；空态「数据为空」；规则卡 343×66；无底栏</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/draw/Leaderboard/Leaderboard">
+    <span class="num">76</span><span class="label">参与人数 · 恒 0<small>黑卡全宽 375×57（数字 fw700 666）；底栏白底 91px + 按钮 360×46；计数来自页面参数，直接访问恒 0</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/draw/shareCommunityGroup/shareCommunityGroup">
+    <span class="num">77</span><span class="label">分享社群 · 404 积分真实态<small>GET get_my_share_details 原站 404 空体 → catch 后积分 0 静态渲染；规则卡 343×64 无图标、标题 15px/400 黑色；提交钮 bg rgb(20,20,22) br0 非 fixed</small></span><span class="arrow">›</span>
+  </a>
+  <p class="group-title">批次21 活动 · 真实态（P100-P101）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/activity/draw">
+    <span class="num">78</span><span class="label">抽签 · 活动不存在纯白<small>GET /api/draw/get 返回「活动不存在」code0 → 组件渲染抛异常 → 整页纯白；无活动参数直访真实态，如实复刻不臆造抽奖界面</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/activity/record">
+    <span class="num">79</span><span class="label">中签记录 · 空态<small>POST /api/draw/drawLog 返回 data:[] → 开箱空态图 142×142 @116.5,276 +「目前没有任何数据」13px 灰；图片复用批次19 同源图逐像素一致</small></span><span class="arrow">›</span>
+  </a>
+  <p class="group-title">批次22 活动精选 · 真实态（P102）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/activeSelected/activeSelected">
+    <span class="num">80</span><span class="label">活动精选 · 空态<small>整页 rgb(244,246,250)；顶部两分类入口背景图全 404（OBS 跨域+3 图 404）→ 隐形卡+白字「最新活动」「抽奖中心」如实复刻；Activity/category data:[] + activity/index total:0 → 开箱空态图 142×142 +「目前没有任何数据」</small></span><span class="arrow">›</span>
+  </a>
+  <p class="group-title">批次23 实名认证 · 静态真实态（P103-P104）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/certification/certification">
+    <span class="num">81</span><span class="label">实名认证 · 已完成态<small>整页背景图 cert-verified.png（粉渐变+3D勾+云朵 1125×2436=3x）；「当前已完成实名认证」20px/700 红 + 姓名王*绵/身份证 520************838 二次脱敏 14px/400 灰 + 隐私说明 11px 两行 + 底部灰按钮「已完成实名」；real_name_authentication=1 真实态，仅全局接口</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/certification/certificationStatus">
+    <span class="num">82</span><span class="label">认证结果 · 失败态<small>纯白无背景图（cj-page-bg.png 404 如实不落地）；标题「认证结果」17px/700 + 「实名认证失败」24px/500 + 描述 14px/400 + 中间空图标占位（如实留空） + 深灰按钮「重新认证」174×46 br12；原生 nav 双标题框架层 SKIP，仅全局接口</small></span><span class="arrow">›</span>
+  </a>
+  <p class="group-title">批次24 行情K线 · 深色真实数据快照（P105-P106）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/kline/buy">
+    <span class="num">83</span><span class="label">行情购买 · 深色主题<small>内容区纯黑+navbar 深蓝 rgb(35,39,68)；banner u-swiper 轮播首图 750×580 cover 含红龙/双二维码/「三年之约双端启航」/HUOTU+指示器暗黄点亮绿条；「凤吹晚霞」18px/600 白+「-0.53%/112.34CNY」rgb(51,51,51) 低对比真实态；Tab 流通 active；零专用接口</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/kline/info">
+    <span class="num">84</span><span class="label">行情详情 · 深蓝数据网格<small>整页深蓝 rgb(35,39,68)；banner @13,52+藏品名称/比太+价格暗灰；数据 2列×3行 12px 灰标签+白数值均 30000；sticky Tab 7px 缩放态（寄售屏外）；底部粉 rgb(231,141,210)+橙黄 rgb(234,171,75) 按钮 br25「开启行情提醒」「批量买卖」+sc3/关注；零专用接口</small></span><span class="arrow">›</span>
+  </a>
+  <p class="group-title">批次3 我的域二级页 · 静态真实态（P009-P024）</p>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/about">
+    <span class="num">85</span><span class="label">关于我们<small>白底协议页；去评分/关于我们/《用户服务协议》《隐私政策》；仅全局接口</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/actionPwd/getCode">
+    <span class="num">86</span><span class="label">修改操作密码<small>6 个验证码框白底截图隐形真实态；输入当前操作密码+忘记密码</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/actionPwd/setPwd">
+    <span class="num">87</span><span class="label">设置操作密码<small>register-bg 红渐变+火兔logo整页背景；4 圆角输入+黑色获取验证码+粉底确认</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/address/edit">
+    <span class="num">88</span><span class="label">添加收货地址<small>表单卡 br12；4 行标签+默认开关+深色保存按钮</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/address/list">
+    <span class="num">89</span><span class="label">收货地址<small>empty-data 空态图+去添加收货地址；address_list 恒空 data:[]</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/cancellation">
+    <span class="num">90</span><span class="label">注销账号申请<small>长文本卡片+小黄点+确认注销橙描边按钮；正文回退 Times New Roman</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/depositinquiry">
+    <span class="num">91</span><span class="label">存证查询<small>双 textarea+7px 极小占位符；请输入区块链信息/查询结果</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/enablingcenter">
+    <span class="num">92</span><span class="label">赋能中心<small>原生 nav 空页真实态，无内容</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/flowDoc">
+    <span class="num">93</span><span class="label">流转记录<small>空态图+参数错误 toast；getRecord 无参数直访真实态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/info">
+    <span class="num">94</span><span class="label">个人信息<small>头像破图灰块+昵称/手机号 175****1293 脱敏</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/join">
+    <span class="num">95</span><span class="label">加入社群<small>二维码加载失败 193×193 灰块真实态，如实留白</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/privacy">
+    <span class="num">96</span><span class="label">隐私设置<small>对外展示排行信息开关（黑底开启态）</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/service">
+    <span class="num">97</span><span class="label">客服<small>灰底+蓝色电话/邮件 SVG 图标；客服电话/邮箱「待定」</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/my/vip">
+    <span class="num">98</span><span class="label">VIP权益中心<small>黑底+5 张 static/vip 图叠放；权益卡墙文字全在 icons.png 内</small></span><span class="arrow">›</span>
+  </a>
+  <!-- 批次4 市场交易 11 页 -->
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/market/attentionList">
+    <span class="num">99</span><span class="label">关注列表<small>经典/关注/热榜顶栏+2列8卡真实快照，左白卡右深灰卡</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/market/categoryManager">
+    <span class="num">100</span><span class="label">分类管理<small>我的分类3胶囊+其他分类空，白底</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/market/detail">
+    <span class="num">101</span><span class="label">市场详情<small>无参数直访 fallback 首页真实态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/market/giftRecord">
+    <span class="num">102</span><span class="label">赠送记录<small>白底空页+浅灰占位条真实态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/market/marketGoodsList">
+    <span class="num">103</span><span class="label">市场商品列表<small>500错误空壳：loading灰块+限价¥--+4Tab+空态图+双按钮</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/market/search">
+    <span class="num">104</span><span class="label">市场搜索<small>搜索框+数字藏品/盲盒竖排Tab+8商品行，涨红跌绿</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/market/sellBegBuy">
+    <span class="num">105</span><span class="label">寄售求购<small>无参数 fallback 首页+藏品不存在 toast 真实态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/market/sellInfo">
+    <span class="num">106</span><span class="label">寄售信息<small>无参数直访 fallback 首页真实态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/market/submitBegBuy">
+    <span class="num">107</span><span class="label">发起求购<small>表单+藏品ID不能为空 toast+合计/预付</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/market/submitEntrust">
+    <span class="num">108</span><span class="label">委托购买<small>最高委托价/委托价格/预计收入/委托说明4卡</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/market/tradeUnion">
+    <span class="num">109</span><span class="label">GM工会<small>深棕主题+宝箱背景+锁+未解锁提示+权益卡</small></span><span class="arrow">›</span>
+  </a>
+  <!-- 批次25-29 收官 7 页 -->
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/leaderboard/leaderboard">
+    <span class="num">110</span><span class="label">排行榜<small>名人堂未开启空态：整页 rank_bg 麦穗/今日热榜+空盒子+目前没有任何数据</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/marketCapRanking/marketCapRanking">
+    <span class="num">111</span><span class="label">市值排行<small>ranking 空 data，纯白空页真实态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/rules/rules">
+    <span class="num">112</span><span class="label">活动规则<small>白底 navbar+浅灰内容卡空态（draw_lots_rule 空串）</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/index/downloadApp">
+    <span class="num">113</span><span class="label">下载 APP<small>白卡+邀请机器人图+红/黑下载按钮+3项说明+邀请码卡</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/index/start">
+    <span class="num">114</span><span class="label">启动页<small>整页 start-bg 赴火兔之约藏数字山河+右上跳过</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/webview/webview">
+    <span class="num">115</span><span class="label">内嵌页 webview<small>无 url 参数，全屏 iframe 空白真实态</small></span><span class="arrow">›</span>
+  </a>
+  <a class="btn" href="https://a68261aa230177548.app.workbuddy.host/?sharecode=C2APU7DXA7#/pages/webview/webview-storage">
+    <span class="num">116</span><span class="label">内嵌存储页<small>无 url 参数，wv-page 空白真实态</small></span><span class="arrow">›</span>
+  </a>
+  <p class="foot">113/113 全量收官。本页为验收导航工具，不属于 113 页复刻清单，未改动任何已完成页面。</p>
+</div>
+</body>
+</html>
